@@ -21,3 +21,43 @@
  * 
  */
 ?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<?php 
+			$title = "Redeeming Technology for Kingdom Work";
+			require_once('partials/site_wide_css_js.inc.php'); 
+		?>
+	</head>
+	<body>
+		<div class="navbar">
+	    <div class="navbar-inner">
+	      <div class="container">
+	        	<?php require_once('partials/main_nav.inc.php'); ?>
+	      </div>
+	    </div>
+	  </div>
+		<div class="slider">
+			<div class="inner">
+				<div class="container">
+					<div class="camera_wrap">
+					   <!-- Slideshow Here -->
+					</div>
+				</div>
+			</div>
+		</div>
+	  <div class="content">
+			<div class="inner">
+				<div class="container home">
+					  <div class="padded_content">
+							<!-- Content Here -->
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
