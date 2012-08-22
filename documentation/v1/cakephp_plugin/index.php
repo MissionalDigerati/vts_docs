@@ -26,7 +26,7 @@
 	<head>
 		<?php 
 			$title = "Redeeming Technology for Kingdom Work";
-			require_once('../../../partials/site_wide_css_js.inc.php'); 
+			require_once('../../../partials/site_wide_css.inc.php'); 
 		?>
 	</head>
 	<body>
@@ -59,5 +59,6 @@
 				</div>
 			</div>
 		</div>
+		<?php require_once('../../../partials/site_wide_js.inc.php'); ?>
 	</body>
 </html>
