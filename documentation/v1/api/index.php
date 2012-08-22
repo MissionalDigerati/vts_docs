@@ -67,7 +67,7 @@ $XMLDefintion = "Extensible Markup Language is a markup language that defines a 
 								<ul>
 									<li><a href="#characteristics">Characteristics</a></li>
 									<li><a href="/documentation/v1/api/usage">API Usage</a></li>
-									<li><a href="/documentation/v1/api/installation">Install API</a></li>
+									<li><a href="/documentation/v1/api/install">Install API</a></li>
 									<li><a href="#requirements">Requirements</a></li>
 								</ul>
 							</div>
