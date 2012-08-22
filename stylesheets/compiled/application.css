@@ -1,7 +1,7 @@
-.clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";}
+.clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0;}
 .clearfix:after{clear:both;}
 .hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0;}
-.input-block-level{display:block;width:100%;min-height:28px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
+.input-block-level{display:block;width:100%;min-height:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
 body{background-image:url('/images/site/furley_bg.png');background-color:#ffffff;}
 p{margin-bottom:12px;}p.emphasis_quote{font-size:small;font-weight:bold;text-align:center;color:#232323;}
 p.italic{font-style:italic;}
@@ -13,9 +13,9 @@ div.slider div.inner div.container,div.video_player div.inner div.container{padd
 div.social_share div.add_this_icons{position:relative;height:45px;}div.social_share div.add_this_icons div.addthis_toolbox{position:absolute;right:10px;text-align:right;top:10px;}
 .navbar-inner{background-color:#232323;background-image:none;background-image:none;background-image:none;background-image:none;background-image:none;background-image:none;background-repeat:no-repeat;filter:none;}
 ul.dropdown-menu li>a:hover{background-color:#cbfe01;color:#232323;}
-.navbar{margin-bottom:0px;}.navbar .brand{padding:16px 20px;}
+.navbar{margin-bottom:0px;}.navbar .brand{padding:16px 20px;text-shadow:none;}
 .navbar div.donate{margin:10px 0px 0px;}
-.navbar .nav{top:60px;clear:right;}.navbar .nav li>a{text-transform:uppercase;}.navbar .nav li>a:hover{text-transform:uppercase;}
+.navbar .nav{top:60px;clear:right;}.navbar .nav li>a{text-transform:uppercase;text-shadow:none;}.navbar .nav li>a:hover{text-transform:uppercase;text-shadow:none;}
 .navbar .nav .active>a{background-color:#232323;}.navbar .nav .active>a:hover{background-color:#232323;}
 .slider .inner{text-align:center;}.slider .inner .container{padding-bottom:20px;}
 .content .inner .container{min-height:200px;}
@@ -28,11 +28,11 @@ div.container.home{font-size:15px;}div.container.home p{font-size:15px;}
 div.container.home ul li{padding:5px 0px;margin-left:20px;}
 .video_container{position:relative;padding-bottom:35%;padding-top:30px;height:0;overflow:hidden;}.video_container iframe,.video_container object,.video_container embed{position:absolute;top:0;left:0;width:100%;height:100%;}
 .box100{width:100%;}
-.staff{*zoom:1;clear:both;display:block;}.staff:before,.staff:after{display:table;content:"";}
+.staff{*zoom:1;clear:both;display:block;}.staff:before,.staff:after{display:table;content:"";line-height:0;}
 .staff:after{clear:both;}
 .staff .staff_pic{width:25%;text-align:center;float:left;}
 .staff .staff_bio{width:75%;float:left;clear:right;}
-.skills_box{*zoom:1;clear:both;display:block;}.skills_box:before,.skills_box:after{display:table;content:"";}
+.skills_box{*zoom:1;clear:both;display:block;}.skills_box:before,.skills_box:after{display:table;content:"";line-height:0;}
 .skills_box:after{clear:both;}
 .skills_box img{float:left;width:46%;padding:0 2%;}
 h1,h2,h3,h4{color:#232323;}
