@@ -19,3 +19,6 @@
   * @copyright Copyright 2012 Missional Digerati
   * 
   */
+$(document).ready(function() {
+	$('a.popover').popover();
+});

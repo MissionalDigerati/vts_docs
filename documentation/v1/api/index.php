@@ -50,10 +50,38 @@
 			<div class="inner">
 				<div class="container home">
 					  <div class="padded_content">
-							<!-- Content Here -->
+							<div class="pull-right">
+									<a class="btn btn-primary" href="https://github.com/MissionalDigerati/vts_api" target="_blank">Fork VTS API on Github</a>
+							</div>
+							<div class="page-header">
+								<h1>Video Translator Service API Documentation</h1>
+							</div>
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							<div class="page-header">
+								<h2>Installation</h2>
+							</div>
 							
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							<div class="page-header">
+								<h2>Requirements</h2>
+							</div>
+							
+							<div class="page-header">
+								<h2>Characteristics</h2>
+							</div>
+							<h3>HTTP-based</h3>
+							<p>This API use the power of HTTP request protocols.  These are the supported HTTP request protocols:</p>
+							<ul>
+								<li>GET - retrieving information about a resource.</li>
+								<li>POST - create a new resource.</li>
+								<li>PUT - modify a current resource.  You will need to do a POST with an attribute "_method=PUT", to use this method.</li>
+								<li>DELETE - delete a current resource.  You will need to do a POST with an attribute "_method=DELETE", to use this method.</li>
+							</ul>
+							<p>For more information,  check out <a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods" target="_blank">this article</a> on Wikipedia.</p>
+							<h3>REST</h3>
+							<p>This API conforms to the design principles of Representational State Transfer (REST). Simply change the format extension a request to get results in the format of your choice.  We currently accept the <a href="#" class="popover" data-content="boo" data-original-title="JSON">JSON</a> and <a href="http://en.wikipedia.org/wiki/XML" target="_blank">XML</a> format.</p>
+
+							<h3>Form Based Parameters</h3>
+							<p>Currently this API only accepts form based data submission.  All parameters should have a content type of <code>application/x-www-form-urlencoded</code> or <code>multipart/form-data</code>.</p>
 						</div>
 					</div>
 				</div>
