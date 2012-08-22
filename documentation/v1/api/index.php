@@ -20,13 +20,15 @@
  * @copyright Copyright 2012 Missional Digerati
  * 
  */
+$JSONDefintion = "JSON, or JavaScript Object Notation, is a text-based open standard designed for human-readable data interchange. It is derived from the JavaScript scripting language for representing simple data structures and associative arrays, called objects.<br><br><a href='http://en.wikipedia.org/wiki/JSON' target='_blank'>- Wikipedia</a>";
+$XMLDefintion = "Extensible Markup Language is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable. It is defined in the XML 1.0 Specification produced by the W3C, and several other related specifications, all gratis open standards.<br><br><a href='http://en.wikipedia.org/wiki/XML' target='_blank'>- Wikipedia</a>";
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<?php 
 			$title = "Redeeming Technology for Kingdom Work";
-			require_once('../../../partials/site_wide_css_js.inc.php'); 
+			require_once('../../../partials/site_wide_css.inc.php'); 
 		?>
 	</head>
 	<body>
@@ -78,8 +80,8 @@
 							</ul>
 							<p>For more information,  check out <a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods" target="_blank">this article</a> on Wikipedia.</p>
 							<h3>REST</h3>
-							<p>This API conforms to the design principles of Representational State Transfer (REST). Simply change the format extension a request to get results in the format of your choice.  We currently accept the <a href="#" class="popover" data-content="boo" data-original-title="JSON">JSON</a> and <a href="http://en.wikipedia.org/wiki/XML" target="_blank">XML</a> format.</p>
-
+							<p>This API conforms to the design principles of Representational State Transfer (REST). Simply change the format extension a request to get results in the format of your choice.  We currently accept the <a href="" rel="popover" class="popover_link" data-content="<?php echo $JSONDefintion; ?>" data-original-title="JSON">JSON</a> and <a href="" rel="popover" class="popover_link" data-content="<?php echo $XMLDefintion; ?>" data-original-title="XML">XML</a> format.</p>
+							
 							<h3>Form Based Parameters</h3>
 							<p>Currently this API only accepts form based data submission.  All parameters should have a content type of <code>application/x-www-form-urlencoded</code> or <code>multipart/form-data</code>.</p>
 						</div>
@@ -87,5 +89,6 @@
 				</div>
 			</div>
 		</div>
+		<?php require_once('../../../partials/site_wide_js.inc.php'); ?>
 	</body>
 </html>

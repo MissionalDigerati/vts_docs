@@ -20,5 +20,8 @@
   * 
   */
 $(document).ready(function() {
-	$('a.popover').popover();
+	$('.popover_link').popover({trigger: 'click', placement: 'top'});
+	$('.popover_link').click(function() {
+		return false;
+	});
 });
