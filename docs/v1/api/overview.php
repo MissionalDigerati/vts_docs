@@ -91,31 +91,75 @@ $XMLDefintion = "Extensible Markup Language is a markup language that defines a 
 								<div class="page-header">
 									<h2>Installation</h2>
 								</div>
+								<p>You will need to setup a web server with all the requirements listed above.  Once it is setup,  you will need to complete the following:</p>
+								<ol>
+										<li>Download the stable version of CakePHP 2.1 from the <a hef="https://github.com/cakephp/cakephp/tags" target="_blank" rel="nofollow" title="CakePHP Github download page">CakePHP Github download page</a>.</li>
+										<li>Download the latest version of the VTS API code from the <a hef="https://github.com/MissionalDigerati/vts_api/tags" target="_blank" rel="nofollow" title="VTS API Github download page">VTS API Github download page</a>.</li>
+										<li>Extract both downloads.</li>
+										<li>Rename the VTS API download folder to <strong>app</strong>, and replace the <strong>app</strong> directory inside the CakePHP downloaded folder.</li>
+										<li>Upload the CakePHP folder to your web server.</li>
+										
+										<li>Copy <code>Config/core.php.default</code> to <code>Config/core.php</code>.  Open the file in your favorite text editor, and change the following settings:
+											<ul>
+												<li>Change <strong>debug</strong> to 0.
+													<div>
+														<pre>Configure::write('debug', 0);</pre>
+													</div>
+												</li>
+												<li>Change <strong>Security.salt</strong> and <strong>Security.cipherSeed</strong>.
+													<div>
+<pre>Configure::write('Security.salt', 'YOUR_SALT');
+Configure::write('Security.cipherSeed', 'YOUR_CIPHER_SEED');</pre>
+													</div>
+												</li>
+												<li>Set <strong>VTS.useCron</strong> for using a Cron Job (true) or Background Process (false).
+													<div>
+														<pre>Configure::write('VTS.useCron',false);</pre>
+													</div>
+												</li>
+												<li>Set <strong>VTS.translationRequest.expires</strong> if you want translation requests to expire.
+													<div>
+														<pre>Configure::write('VTS.translationRequest.expires', false);</pre>
+													</div>
+												</li>
+												<li>Set <strong>VTS.translationRequest.expiresIn</strong> to the number of days till a translation request expires.
+													<div>
+														<pre>Configure::write('VTS.translationRequest.expiresIn', 1);</pre>
+													</div>
+												</li>
+												<li>Set your PHP PEAR path in the PATH environment variable.  You can find the path by logging into your server via command line, and typing  in the command <code>which pear</code>.
+													<div>
+														<pre>putenv('PATH=' . getenv('PATH') . PATH_SEPARATOR . '/usr/local/bin');</pre>
+													</div>
+												</li>
+											</ul></li>
+											<li>Setup a database and database user for the app according to your hosting provider's instruction.</li>
+											<li>Copy <code>Config/database.php.default</code> to <code>Config/database.php</code>.  Open the file in your favorite text editor, and change the database settings:
+										<div>
+<pre>
+public $default = array(
+	'datasource' => 'Database/Mysql',
+	'persistent' => false,
+	'host' => 'localhost',
+	'login' => 'YOUR_DATABASE_USERNAME',
+	'password' => 'YOUR_DATABASE_PASSWORD',
+	'database' => 'YOUR_DATABASE_NAME',
+	'prefix' => '',
+	'encoding' => 'utf8',
+	'unix_socket' => 'YOUR_DATABASE_SOCKET',
+);
+</pre>
+										</div>		
+									</li>
+									<li>Setup the database & admin...</li>
+								</ol>
 							</section>
 							<section id="configuration">
 								<div class="page-header">
 									<h2>Configuration</h2>
 								</div>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-								
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-								
-								
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-								
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-								
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-								
-								
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-								
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-								
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-								
-								
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								Using Cron Job or Background Process
+								Expiring Translation Requests
 							</section>
 						</div><!-- .span8 -->
 						<div class="span1">&nbsp;</div>
