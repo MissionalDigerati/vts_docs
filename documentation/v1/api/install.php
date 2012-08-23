@@ -30,22 +30,11 @@
 		?>
 	</head>
 	<body>
-		<div class="navbar">
-	    <div class="navbar-inner">
-	      <div class="container">
-	        	<?php require_once('../../../partials/main_nav.inc.php'); ?>
-	      </div>
-	    </div>
-	  </div>
-		<div class="slider">
-			<div class="inner">
-				<div class="container">
-					<div class="camera_wrap">
-					   <!-- Slideshow Here -->
-					</div>
-				</div>
-			</div>
-		</div>
+	  <?php 
+			$taglineHeader = 'Video Translator Service';
+			$taglineText = 'A project of <a href="http://www.missionaldigerati.org" target="_blank">Missional Digerati</a>';
+			require_once('../../../partials/main_nav.inc.php'); 
+		?>
 	  <div class="content">
 			<div class="inner">
 				<div class="container">

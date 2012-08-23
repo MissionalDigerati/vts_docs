@@ -2,7 +2,7 @@
 .clearfix:after{clear:both;}
 .hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0;}
 .input-block-level{display:block;width:100%;min-height:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
-body{background-image:url('/images/site/furley_bg.png');background-color:#ffffff;}
+body{background-image:url('/images/site/furley_bg.png');background-color:#ffffff;padding-top:40px;}
 p{margin-bottom:12px;}p.emphasis_quote{font-size:small;font-weight:bold;text-align:center;color:#232323;}
 p.italic{font-style:italic;}
 span.tagline{color:#ffffff;font-size:12px;font-style:italic;}
@@ -11,12 +11,13 @@ div.inner div.container{background-color:#ffffff;}
 div.extra div.inner div.container{background-color:#232323;}
 div.slider div.inner div.container,div.video_player div.inner div.container{padding-top:20px;}
 div.social_share div.add_this_icons{position:relative;height:45px;}div.social_share div.add_this_icons div.addthis_toolbox{position:absolute;right:10px;text-align:right;top:10px;}
-.navbar-inner{background-color:#232323;background-image:none;background-image:none;background-image:none;background-image:none;background-image:none;background-image:none;background-repeat:no-repeat;filter:none;}
-ul.dropdown-menu li>a:hover{background-color:#cbfe01;color:#232323;}
-.navbar{margin-bottom:0px;}.navbar .brand{padding:16px 20px;text-shadow:none;}
-.navbar div.donate{margin:10px 0px 0px;}
-.navbar .nav{top:60px;clear:right;}.navbar .nav li>a{text-transform:uppercase;text-shadow:none;}.navbar .nav li>a:hover{text-transform:uppercase;text-shadow:none;}
-.navbar .nav .active>a{background-color:#232323;}.navbar .nav .active>a:hover{background-color:#232323;}
+.navbar{background-color:#232323;background-image:none;background-repeat:no-repeat;filter:none;}.navbar .navbar-inner{background-color:transparent;background-image:none;background-repeat:no-repeat;filter:none;border:none;}
+ul.dropdown-menu li>a:hover{background-color:transparent;color:#232323;}
+.project-tagline{background-image:url('/images/site/broken_noise.png');}.project-tagline h1{font-size:70px;font-weight:bold;letter-spacing:-1px;line-height:1;color:#fff;}
+.project-tagline p{color:#fff;font-size:24px;font-weight:300;line-height:30px;margin-bottom:30px;}
+.project-tagline a{color:#cbfe01;cursor:pointer;}
+.navbar{margin-bottom:0px;}.navbar .nav li>a{text-transform:uppercase;text-shadow:none;}.navbar .nav li>a:hover{text-transform:uppercase;text-shadow:none;}
+.navbar .nav .active>a{color:#cbfe01;background-color:transparent;}.navbar .nav .active>a:hover{color:#cbfe01;background-color:transparent;}
 .slider .inner{text-align:center;}.slider .inner .container{padding-bottom:20px;}
 .content .inner .container{min-height:200px;}
 .padded_content{padding:0 2%;width:96%;}

@@ -25,18 +25,27 @@ if(isset($_SERVER["REQUEST_URI"])) {
 }else {
 	$requestedUrl = '';
 }
+$taglineHeader = (isset($taglineHeader)) ? $taglineHeader : 'Video Translator Service';
+$taglineText = (isset($taglineText)) ? $taglineText : 'A project of <a href="http://www.missionaldigerati.org" target="_blank">Missional Digerati</a>';
 ?>
-<a class="btn btn-navbar nav-display-button" data-toggle="collapse" data-target=".nav-collapse">
-<span class="icon-bar"></span>
-</a>
-<a class="brand" href="/">
-	<img src="/images/site/logo.png" alt="Missional Digerati" title="Missional Digerati" id="logo" /><br>
-	<span class="tagline"><strong>Project</strong> - A Video Translator Service API</span>
-</a>
-<div class="nav-collapse">
-	<ul class="nav pull-right">
-		<li<?php if($requestedUrl ==''){ echo ' class="active"'; } ?>><a href="/">Home</a></li>
-		<li><a href="http://www.missionaldigerati.org/contact-us" target="_blank">Contact Us</a></li>
-	</ul>
-	<div class="clearfix"></div>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      	<a class="btn btn-navbar nav-display-button" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li<?php if($requestedUrl ==''){ echo ' class="active"'; } ?>><a href="/">Home</a></li>
+						<li><a href="http://www.missionaldigerati.org/contact-us" target="_blank">Contact Us</a></li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+    </div>
+  </div>
 </div>
+<header class="project-tagline subhead">
+  <div class="container">
+    <h1><?php echo $taglineHeader; ?></h1>
+    <p class="lead"><?php echo $taglineText; ?></p></div>
+</header>
