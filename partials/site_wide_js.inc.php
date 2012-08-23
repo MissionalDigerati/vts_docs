@@ -26,7 +26,4 @@
 <![endif]-->
 <script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="/vendor/bootstrap/javascript/bootstrap.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="/vendor/javascript/jquery.easing.1.3.js"></script>
-<script type="text/javascript" charset="utf-8" src="/vendor/javascript/jquery.camera.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="/vendor/javascript/jquery.colorbox.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="/javascript/application.js"></script>
