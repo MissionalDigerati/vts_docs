@@ -148,6 +148,23 @@ ul.dropdown-menu {
 			
 		}
 		
+		li.dropdown.active > .dropdown-toggle, li.dropdown.active.open > .dropdown-toggle, li.dropdown.open > .dropdown-toggle {
+			background-color: transparent;
+			color: @mdSecondaryColor;
+			
+			.caret {
+				border-top-color: @mdSecondaryColor;
+				border-bottom-color: @mdSecondaryColor;
+			}
+			
+		}
+		
+		
+		.dropdown-menu a:hover {
+			color: @mdSecondaryColor;
+			background-color: @mdPrimaryColor;
+		}
+		
 		.active > a {
 			color: @mdSecondaryColor;
 			background-color: transparent;
@@ -329,6 +346,10 @@ fieldset p {
 }
 
 .docs {
+	margin-top: 10px;
+}
+
+section#description {
 	margin-top: 10px;
 }
 

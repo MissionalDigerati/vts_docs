@@ -33,8 +33,8 @@ $XMLDefintion = "Extensible Markup Language is a markup language that defines a 
 	</head>
 	<body data-spy="scroll" data-target=".docs-sidebar">
 	  <?php 
-			$taglineHeader = 'Video Translator Service';
-			$taglineText = 'A project of <a href="http://www.missionaldigerati.org" target="_blank">Missional Digerati</a>';
+			$taglineHeader = 'API Documentation';
+			$taglineText = 'A single access point for all your applications.';
 			require_once('../../../partials/main_nav.inc.php'); 
 		?>
 	  <div class="content">
@@ -50,17 +50,11 @@ $XMLDefintion = "Extensible Markup Language is a markup language that defines a 
 							</ul>
 						</div><!-- .span3 -->
 						<div class="span8 docs">
-							<ul class="breadcrumb">
-							  <li><a href="/">Home</a> <span class="divider">/</span></li>
-							  <li class="active">API Documentation</li>
-							</ul>
 							<div class="pull-right">
-									<a class="btn btn-primary" href="https://github.com/MissionalDigerati/vts_api" target="_blank">Fork VTS API on Github</a>
+								<a class="btn btn-primary" href="https://github.com/MissionalDigerati/vts_api" target="_blank"><i class="icon-download-alt icon-white"></i> Download on Github</a>
 							</div>
+							<div class="clearfix"></div>
 							<section id="description">
-								<div class="page-header">
-									<h1>API Documentation</h1>
-								</div>
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 							
 								<h3>HTTP-based</h3>

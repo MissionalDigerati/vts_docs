@@ -37,7 +37,17 @@ $taglineText = (isset($taglineText)) ? $taglineText : 'A project of <a href="htt
 				<div class="nav-collapse">
 					<ul class="nav">
 						<li<?php if($requestedUrl ==''){ echo ' class="active"'; } ?>><a href="/">Home</a></li>
-						<li<?php if($requestedUrl =='docs/v1/api/overview'){ echo ' class="active"'; } ?>><a href="/docs/v1/api/overview">API Documentation</a></li>
+						<li class="dropdown<?php if($requestedUrl =='docs/v1/api/overview'){ echo ' active'; } ?>" id="#api">
+							<a href="#api" class="dropdown-toggle" data-toggle="dropdown">API Documentation<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="/docs/v1/api/overview">Overview & Installation</a></li>
+								<li><a href="/docs/v1/api/workflow">Workflow</a></li>
+								<li><a href="/docs/v1/api/api_keys">API Keys</a></li>
+								<li><a href="/docs/v1/api/api_keys">Translation Requests</a></li>
+								<li><a href="/docs/v1/api/api_keys">Clips</a></li>
+								<li><a href="/docs/v1/api/api_keys">Master Recordings</a></li>
+							</ul>
+						</li>
 						<li><a href="http://www.missionaldigerati.org/contact-us" target="_blank">Contact Us</a></li>
 					</ul>
 					<div class="clearfix"></div>

@@ -17,6 +17,8 @@ ul.dropdown-menu li>a:hover{background-color:transparent;color:#232323;}
 .project-tagline p{color:#fff;font-size:24px;font-weight:300;line-height:30px;margin-bottom:30px;}
 .project-tagline a{color:#cbfe01;cursor:pointer;}
 .navbar{margin-bottom:0px;}.navbar .nav li>a{text-transform:uppercase;text-shadow:none;}.navbar .nav li>a:hover{text-transform:uppercase;text-shadow:none;}
+.navbar .nav li.dropdown.active>.dropdown-toggle,.navbar .nav li.dropdown.active.open>.dropdown-toggle,.navbar .nav li.dropdown.open>.dropdown-toggle{background-color:transparent;color:#cbfe01;}.navbar .nav li.dropdown.active>.dropdown-toggle .caret,.navbar .nav li.dropdown.active.open>.dropdown-toggle .caret,.navbar .nav li.dropdown.open>.dropdown-toggle .caret{border-top-color:#cbfe01;border-bottom-color:#cbfe01;}
+.navbar .nav .dropdown-menu a:hover{color:#cbfe01;background-color:#232323;}
 .navbar .nav .active>a{color:#cbfe01;background-color:transparent;}.navbar .nav .active>a:hover{color:#cbfe01;background-color:transparent;}
 .slider .inner{text-align:center;}.slider .inner .container{padding-bottom:20px;}
 .content .inner .container{min-height:200px;}
@@ -48,6 +50,7 @@ form#submit_idea_form div.phone_number{display:none;}
 form#contact_us_form div.city,form#contribute_skills_form div.city{display:none;}
 fieldset p{padding-top:10px;}
 .docs{margin-top:10px;}
+section#description{margin-top:10px;}
 .span3{min-height:1px;}
 .docs-sidenav{width:223px;margin:10px 0 0 5px;padding:0;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.065);-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.065);box-shadow:0 1px 4px rgba(0, 0, 0, 0.065);}
 .docs-sidenav>li>a{display:block;*width:190px;margin:0 0 -1px;padding:8px 14px;border:1px solid #242424;}
