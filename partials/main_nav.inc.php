@@ -48,6 +48,8 @@ $taglineText = (isset($taglineText)) ? $taglineText : 'A project of <a href="htt
 								<li><a href="/docs/v1/api/api_keys">Master Recordings</a></li>
 							</ul>
 						</li>
+						<li<?php if($requestedUrl ==''){ echo ' class="active"'; } ?>><a href="/docs/v1/web_interface/overview">Sample Web Interface</a></li>
+						<li<?php if($requestedUrl ==''){ echo ' class="active"'; } ?>><a href="/docs/v1/cakephp_plugin/overview">CakePHP Plugin</a></li>
 						<li><a href="http://www.missionaldigerati.org/contact-us" target="_blank">Contact Us</a></li>
 					</ul>
 					<div class="clearfix"></div>
