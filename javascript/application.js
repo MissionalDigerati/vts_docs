@@ -20,8 +20,16 @@
   * 
   */
 $(document).ready(function() {
+	var $window = $(window);
 	$('.popover_link').popover({trigger: 'click', placement: 'top'});
 	$('.popover_link').click(function() {
 		return false;
 	});
+	// side bar
+  $('.docs-sidenav').affix({
+    offset: {
+      top: function () { return $window.width() <= 980 ? 290 : 210 }
+    , bottom: 270
+    }
+  });
 });

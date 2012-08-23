@@ -37,6 +37,7 @@ $taglineText = (isset($taglineText)) ? $taglineText : 'A project of <a href="htt
 				<div class="nav-collapse">
 					<ul class="nav">
 						<li<?php if($requestedUrl ==''){ echo ' class="active"'; } ?>><a href="/">Home</a></li>
+						<li<?php if($requestedUrl =='docs/v1/api/overview'){ echo ' class="active"'; } ?>><a href="/docs/v1/api/overview">API Documentation</a></li>
 						<li><a href="http://www.missionaldigerati.org/contact-us" target="_blank">Contact Us</a></li>
 					</ul>
 					<div class="clearfix"></div>
