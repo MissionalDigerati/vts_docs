@@ -46,6 +46,7 @@ $taglineText = (isset($taglineText)) ? $taglineText : 'A project of <a href="htt
 								<li><a href="/docs/v1/api/api_keys">Translation Requests</a></li>
 								<li><a href="/docs/v1/api/api_keys">Clips</a></li>
 								<li><a href="/docs/v1/api/api_keys">Master Recordings</a></li>
+								<li><a href="/docs/v1/api/response_codes">Response Codes</a></li>
 							</ul>
 						</li>
 						<li<?php if(strpos($requestedUrl, '/docs/v1/web_interface/') !== false){ echo ' class="active"'; } ?>><a href="/docs/v1/web_interface/overview">Sample Web Interface</a></li>
