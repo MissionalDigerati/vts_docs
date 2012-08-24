@@ -25,7 +25,7 @@
 <html>
 	<head>
 		<?php 
-			$title = "API Overview";
+			$title = "Translation Requests";
 			require_once('../../../partials/site_wide_css.inc.php'); 
 		?>
 	</head>
