@@ -45,6 +45,7 @@
 								<li class="active"><a href="#create"><i class="icon-chevron-right"></i> Create</a></li>
 								<li class=""><a href="#delete"><i class="icon-chevron-right"></i> Delete</a></li>
 								<li class=""><a href="#read"><i class="icon-chevron-right"></i> Read</a></li>
+								<li class=""><a href="#read_all"><i class="icon-chevron-right"></i> Read All</a></li>
 							</ul>
 						</div><!-- .span3 -->
 						<div class="span8 docs">
