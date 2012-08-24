@@ -43,8 +43,8 @@
 							<ul class="nav nav-list docs-sidenav affix-top">
 								<li class="active"><a href="#description"><i class="icon-chevron-right"></i> Description</a></li>
 								<li class="active"><a href="#create"><i class="icon-chevron-right"></i> Create</a></li>
-								<li class=""><a href="#read"><i class="icon-chevron-right"></i> Read</a></li>
 								<li class=""><a href="#delete"><i class="icon-chevron-right"></i> Delete</a></li>
+								<li class=""><a href="#read"><i class="icon-chevron-right"></i> Read</a></li>
 							</ul>
 						</div><!-- .span3 -->
 						<div class="span8 docs">
@@ -118,6 +118,62 @@
 </pre>
 								
 							</section>
+							<section id="delete">
+								<div class="page-header">
+									<h2>Delete</h2>
+								</div>
+								<dl>
+								  <dt>HTTP Request Protocol</dt>
+								  <dd>POST</dd>
+									<dt>Resource URL</dt>
+								  <dd>/translation_requests/{translation_request_id}.format (.json or .xml)</dd>
+								</dl>
+								<p>Delete the specific translation request.</p>
+								<table class="table table-hover table-condensed table-bordered table-stripped">
+									<caption>Parameters</caption>
+									<thead>
+									    <tr>
+									      <th>Name</th>
+									      <th>Description</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+											<tr>
+									      <td>translation_request_id</td>
+									      <td>The url must contain the id of the translation request you are getting details about.  You should have received this when you created the translation request. <strong>* Required</strong></td>
+									    </tr>
+									    <tr>
+									      <td>api_key</td>
+									      <td>The API key assigned to the requesting application. <strong>* Required</strong></td>
+									    </tr>
+									    <tr>
+									      <td>_method=DELETE</td>
+									      <td>Tell the server to use the HTTP request protocol DELETE. <strong>* Required</strong></td>
+									    </tr>
+									  </tbody>
+								</table>
+								<h3>Response (JSON)</h3>
+								<p>POST /translation_requests/5.json</p>
+<pre>
+{
+    "vts": {
+        "status": "success",
+        "message": "Your translation request has been deleted.",
+        "translation_request": ""
+    }
+}
+</pre>
+								<h3>Response (XML)</h3>
+								<p>POST /translation_requests/6.xml</p>
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;vts&gt;
+    &lt;status&gt;success&lt;/status&gt;
+    &lt;message&gt;Your translation request has been deleted.&lt;/message&gt;
+    &lt;translation_request/&gt;
+&lt;/vts&gt;
+</pre>
+							</section>
 							<section id="read">
 								<div class="page-header">
 									<h2>Read</h2>
@@ -181,62 +237,6 @@
         &lt;modified&gt;2012-08-24 16:01:25&lt;/modified&gt;
         &lt;expires_at&gt;0000-00-00 00:00:00&lt;/expires_at&gt;
     &lt;/translation_request&gt;
-&lt;/vts&gt;
-</pre>
-							</section>
-							<section id="delete">
-								<div class="page-header">
-									<h2>Delete</h2>
-								</div>
-								<dl>
-								  <dt>HTTP Request Protocol</dt>
-								  <dd>POST</dd>
-									<dt>Resource URL</dt>
-								  <dd>/translation_requests/{translation_request_id}.format (.json or .xml)</dd>
-								</dl>
-								<p>Delete the specific translation request.</p>
-								<table class="table table-hover table-condensed table-bordered table-stripped">
-									<caption>Parameters</caption>
-									<thead>
-									    <tr>
-									      <th>Name</th>
-									      <th>Description</th>
-									    </tr>
-									  </thead>
-									  <tbody>
-											<tr>
-									      <td>translation_request_id</td>
-									      <td>The url must contain the id of the translation request you are getting details about.  You should have received this when you created the translation request. <strong>* Required</strong></td>
-									    </tr>
-									    <tr>
-									      <td>api_key</td>
-									      <td>The API key assigned to the requesting application. <strong>* Required</strong></td>
-									    </tr>
-									    <tr>
-									      <td>_method=DELETE</td>
-									      <td>Tell the server to use the HTTP request protocol DELETE. <strong>* Required</strong></td>
-									    </tr>
-									  </tbody>
-								</table>
-								<h3>Response (JSON)</h3>
-								<p>POST /translation_requests/5.json</p>
-<pre>
-{
-    "vts": {
-        "status": "success",
-        "message": "Your translation request has been deleted.",
-        "translation_request": ""
-    }
-}
-</pre>
-								<h3>Response (XML)</h3>
-								<p>POST /translation_requests/6.xml</p>
-<pre>
-&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;vts&gt;
-    &lt;status&gt;success&lt;/status&gt;
-    &lt;message&gt;Your translation request has been deleted.&lt;/message&gt;
-    &lt;translation_request/&gt;
 &lt;/vts&gt;
 </pre>
 							</section>
