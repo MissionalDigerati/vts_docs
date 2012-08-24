@@ -82,7 +82,7 @@
 									  </tbody>
 								</table>
 								<h3>Response (JSON)</h3>
-								<p>POST /translation_requests.format.json</p>
+								<p>POST /translation_requests.json</p>
 <pre>
 {
     "vts": {
@@ -100,7 +100,7 @@
 }
 </pre>
 								<h3>Response (XML)</h3>
-								<p>POST /translation_requests.format.xml</p>
+								<p>POST /translation_requests.xml</p>
 <pre>
 &lt;vts&gt;
     &lt;status&gt;success&lt;/status&gt;
@@ -121,6 +121,66 @@
 								<div class="page-header">
 									<h2>Read</h2>
 								</div>
+								<dl>
+								  <dt>HTTP Request Protocol</dt>
+								  <dd>GET</dd>
+									<dt>Resource URL</dt>
+								  <dd>/translation_requests/{translation_request_id}.format (.json or .xml)?api_key={your_api_key}</dd>
+								</dl>
+								<p>Retrieve the details of a specific translation request.</p>
+								<table class="table table-hover table-condensed table-bordered table-stripped">
+									<caption>Parameters</caption>
+									<thead>
+									    <tr>
+									      <th>Name</th>
+									      <th>Description</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+											<tr>
+									      <td>translation_request_id</td>
+									      <td>The url must contain the id of the translation request you are getting details about.  You should have received this when you created the translation request. <strong>* Required</strong></td>
+									    </tr>
+									    <tr>
+									      <td>api_key</td>
+									      <td>The API key assigned to the requesting application. <strong>* Required</strong></td>
+									    </tr>
+									  </tbody>
+								</table>
+								<h3>Response (JSON)</h3>
+								<p>GET /translation_requests/5.json?api_key={your_api_key}</p>
+<pre>
+{
+    "vts": {
+        "status": "success",
+        "message": "",
+        "translation_request": {
+            "id": "5",
+            "api_key_id": "1",
+            "token": "tr37eaa9813ddacbc68fe12ce64",
+            "created": "2012-08-24 15:59:29",
+            "modified": "2012-08-24 15:59:29",
+            "expires_at": "0000-00-00 00:00:00"
+        }
+    }
+}
+</pre>
+								<h3>Response (XML)</h3>
+								<p>GET /translation_requests/6.xml?api_key={your_api_key}</p>
+<pre>
+&lt;vts&gt;
+    &lt;status&gt;success&lt;/status&gt;
+    &lt;message/&gt;
+    &lt;translation_request&gt;
+        &lt;id&gt;6&lt;/id&gt;
+        &lt;api_key_id&gt;1&lt;/api_key_id&gt;
+        &lt;token&gt;tr14cdb61a8cdd6c37f7fa16dbf&lt;/token&gt;
+        &lt;created&gt;2012-08-24 16:01:25&lt;/created&gt;
+        &lt;modified&gt;2012-08-24 16:01:25&lt;/modified&gt;
+        &lt;expires_at&gt;0000-00-00 00:00:00&lt;/expires_at&gt;
+    &lt;/translation_request&gt;
+&lt;/vts&gt;
+</pre>
 							</section>
 							<section id="delete">
 								<div class="page-header">
