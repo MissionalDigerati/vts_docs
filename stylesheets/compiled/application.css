@@ -7,6 +7,7 @@ p{margin-bottom:12px;}p.emphasis_quote{font-size:small;font-weight:bold;text-ali
 p.italic{font-style:italic;}
 .docs li{margin:10px 0px;}
 li div{margin:10px 0px;}
+caption{font-weight:bold;}
 span.tagline{color:#ffffff;font-size:12px;font-style:italic;}
 p.lead a{color:#cbfe01;cursor:pointer;}
 a{cursor:pointer;color:#939393;}a:hover{color:#939393;}

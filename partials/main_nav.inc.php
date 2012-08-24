@@ -43,9 +43,9 @@ $taglineText = (isset($taglineText)) ? $taglineText : 'A project of <a href="htt
 								<li><a href="/docs/v1/api/overview">Overview & Installation</a></li>
 								<li><a href="/docs/v1/api/workflow">Workflow</a></li>
 								<li><a href="/docs/v1/api/api_keys">API Keys</a></li>
-								<li><a href="/docs/v1/api/api_keys">Translation Requests</a></li>
-								<li><a href="/docs/v1/api/api_keys">Clips</a></li>
-								<li><a href="/docs/v1/api/api_keys">Master Recordings</a></li>
+								<li><a href="/docs/v1/api/translation_requests">Translation Requests</a></li>
+								<li><a href="/docs/v1/api/clips">Clips</a></li>
+								<li><a href="/docs/v1/api/master_recordings">Master Recordings</a></li>
 								<li><a href="/docs/v1/api/response_codes">Response Codes</a></li>
 							</ul>
 						</li>
