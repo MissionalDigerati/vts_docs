@@ -44,15 +44,6 @@ p {
 	
 }
 
-a {
-	cursor: pointer;
-	color: @mdAltColor2;
-	
-	&:hover {
-		color: @mdAltColor2;
-	}
-}
-
 .docs li {
 	margin: 10px 0px;
 }
@@ -67,10 +58,17 @@ span.tagline {
 	color: @white;
 	font-size: 12px;
 	font-style: italic;
+}
+p.lead a {
+	color: @mdSecondaryColor;
+	cursor: pointer;
+}
+a {
+	cursor: pointer;
+	color: @mdAltColor2;
 	
-	a {
-		color: @mdSecondaryColor;
-		cursor: pointer;
+	&:hover {
+		color: @mdAltColor2;
 	}
 }
 div.slider, div.content, div.inner {

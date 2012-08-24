@@ -21,7 +21,7 @@
  * 
  */
 ?>
-<title>Missional Digerati:: <?php echo $title; ?></title>
+<title>Video Translator Service:: <?php echo $title; ?></title>
 <link rel="stylesheet" href="/stylesheets/compiled/custom_bootstrap.css" type="text/css" charset="utf-8">
 <link rel="stylesheet" href="/stylesheets/compiled/application.css" type="text/css" charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

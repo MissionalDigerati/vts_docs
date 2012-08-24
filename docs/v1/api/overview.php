@@ -27,7 +27,7 @@ $XMLDefintion = "Extensible Markup Language is a markup language that defines a 
 <html>
 	<head>
 		<?php 
-			$title = "Redeeming Technology for Kingdom Work";
+			$title = "API Overview";
 			require_once('../../../partials/site_wide_css.inc.php'); 
 		?>
 	</head>

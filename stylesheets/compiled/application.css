@@ -5,10 +5,11 @@
 body{background-image:url('/images/site/furley_bg.png');background-color:#ffffff;padding-top:40px;}
 p{margin-bottom:12px;}p.emphasis_quote{font-size:small;font-weight:bold;text-align:center;color:#232323;}
 p.italic{font-style:italic;}
-a{cursor:pointer;color:#939393;}a:hover{color:#939393;}
 .docs li{margin:10px 0px;}
 li div{margin:10px 0px;}
-span.tagline{color:#ffffff;font-size:12px;font-style:italic;}span.tagline a{color:#cbfe01;cursor:pointer;}
+span.tagline{color:#ffffff;font-size:12px;font-style:italic;}
+p.lead a{color:#cbfe01;cursor:pointer;}
+a{cursor:pointer;color:#939393;}a:hover{color:#939393;}
 div.slider,div.content,div.inner{background-color:transparent;}
 div.inner div.container{background-color:#ffffff;padding-bottom:20px;}
 div.extra div.inner div.container{background-color:#232323;}

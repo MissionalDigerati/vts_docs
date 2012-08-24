@@ -25,7 +25,7 @@
 <html>
 	<head>
 		<?php 
-			$title = "Redeeming Technology for Kingdom Work";
+			$title = "Crowd-Sourcing Video Translation";
 			require_once('partials/site_wide_css.inc.php'); 
 		?>
 	</head>
