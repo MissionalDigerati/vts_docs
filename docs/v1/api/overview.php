@@ -158,8 +158,31 @@ public $default = array(
 								<div class="page-header">
 									<h2>Configuration</h2>
 								</div>
-								Using Cron Job or Background Process
-								Expiring Translation Requests
+								<h3>Processing Videos: Cron Job or Background Process</h3>
+								<p>The processing time for a single clip averages around 3 minutes for a 20 second clip.  Since this is a long time to keep a request open,  the system offers  two ways you can handle the processing.  You can either use a background process that is triggered by the code,  or setup a cron job to process every few minutes.  Here is some more information on the two choices.</p>
+								<h4>Cron Job</h4>
+								<p>To use the cron job method,  set the <strong>VTS.useCron</strong> in <code>Config/core.php</code> file equal to <strong>true</strong>.</p>
+								<div>
+									<pre>Configure::write('VTS.useCron',false);</pre>
+								</div>
+								<p>A cron job is a reoccurring task that runs at specific intervals during the day.  You will setup the task in the control panel of your web server, or on the command line.  Please ask your web service provider for directions on how to set up the cron job.  It is suggested to run the following command, from the API's <strong>app</strong> directory, every 5 minutes on your web server.</p>
+								<div>
+									<pre>php scripts/vts_processor.php</pre>
+								</div>
+								<p>The script will grab the latest clip and will process it.  If there are no clips,  then it will look for the latest master recording to process.  The script will only process one request at a time.</p>
+								<h4>Background Process</h4>
+								<p>To use the background processing method,  set the <strong>VTS.useCron</strong> in <code>Config/core.php</code> file equal to <strong>false</strong>.</p>
+								<div>
+									<pre>Configure::write('VTS.useCron',false);</pre>
+								</div>
+								<p>You will also need to setup the path to your PEAR library.  You can find the path by logging into your server via command line, and typing  in the command <code>which pear</code>.  Then you will need to add the path to the bottom of the <code>Config/core.php</code> file.</p>
+								<div>
+									<pre>putenv('PATH=' . getenv('PATH') . PATH_SEPARATOR . '/usr/local/bin');</pre>
+								</div>
+								<p>Whenever a request is received by the server,  the system will trigger a command line request to run the <code>trigger_bg_process.php</code> file, and then will continue processing the request.  The output of the command gets funneled to a log file in  <code>tmp/logs/processor.log</code>,  which allows PHP to continue without waiting.</p>
+								<h4>Which Should I Use?</h4>
+								<p>It is recommended to use a cron job for handling these tasks.  This will help you keep control of server resources,  and protect your server from crashing.  Since background processes trigger when requested,  it is possible to overload the server with requests.  Also,  FFMPEG tends to be server intensive program.  Ultimately, it is a question of how many people would be using the system.  If it will only be a select few, then the background process will work fine.  For a large group of participants,  I recommend the cron job.</p>
+								<h3>Expiring Translation Requests</h3>
 							</section>
 						</div><!-- .span8 -->
 						<div class="span1">&nbsp;</div>
