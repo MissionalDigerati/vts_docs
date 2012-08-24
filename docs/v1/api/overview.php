@@ -47,6 +47,7 @@ $XMLDefintion = "Extensible Markup Language is a markup language that defines a 
 								<li class=""><a href="#requirements"><i class="icon-chevron-right"></i> Requirements</a></li>
 								<li class=""><a href="#installation"><i class="icon-chevron-right"></i> Installation</a></li>
 								<li><a href="#configuration"><i class="icon-chevron-right"></i> Configuration</a></li>
+								<li><a href="#licensing"><i class="icon-chevron-right"></i> Licensing</a></li>
 							</ul>
 						</div><!-- .span3 -->
 						<div class="span8 docs">
@@ -55,7 +56,7 @@ $XMLDefintion = "Extensible Markup Language is a markup language that defines a 
 							</div>
 							<div class="clearfix"></div>
 							<section id="description">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								<p>An API is defined as a application programming interface, and provides a single interface for achieving a specific task from a wide array of devices. From an iPhone application, to a web based tool,  all devices can access this API regardless of the programming language.  Using a RESTful style of urls,  devices can make requests to the API,  and receive back information about the progress of the request.  This specific API provides a single interface for video manipulation.  Users can upload audio for a specific video clip,  and the API will merge the audio file with the video file.  As it merges the files,  it will also lengthen or shorten the video, by altering the frame rate, to match the audio length.  This API can also combine multiple clips into a single master recording.  The goal of the API is to create a single gateway for crowd-sourcing the translation of videos on the web.</p>
 							
 								<h3>HTTP-based</h3>
 								<p>This API use the power of HTTP request protocols.  These are the supported HTTP request protocols:</p>
@@ -93,12 +94,12 @@ $XMLDefintion = "Extensible Markup Language is a markup language that defines a 
 								</div>
 								<p>You will need to setup a web server with all the requirements listed above.  Once it is setup,  you will need to complete the following:</p>
 								<ol>
-										<li>Download the stable version of CakePHP 2.1 from the <a hef="https://github.com/cakephp/cakephp/tags" target="_blank" rel="nofollow" title="CakePHP Github download page">CakePHP Github download page</a>.</li>
-										<li>Download the latest version of the VTS API code from the <a hef="https://github.com/MissionalDigerati/vts_api/tags" target="_blank" rel="nofollow" title="VTS API Github download page">VTS API Github download page</a>.</li>
+										<li>Download the stable version of CakePHP 2.1 from the <a href="https://github.com/cakephp/cakephp/tags" target="_blank">CakePHP Github download page</a>.</li>
+										<li>Download the latest version of the VTS API code from the <a href="https://github.com/MissionalDigerati/vts_api/tags" target="_blank" title="VTS API Github download page">VTS API Github download page</a>.</li>
 										<li>Extract both downloads.</li>
-										<li>Rename the VTS API download folder to <strong>app</strong>, and replace the <strong>app</strong> directory inside the CakePHP downloaded folder.</li>
+										<li>Rename the VTS API downloaded folder to <strong>app</strong>, and replace the <strong>app</strong> directory inside the CakePHP downloaded folder.</li>
 										<li>Upload the CakePHP folder to your web server.</li>
-										
+										<li>Retrieve your server's path to the PHP PEAR library by logging into your web server using command line, and typing in the command <code>which pear</code>.  Copy the output, and save it temporarily for a later step.</li>
 										<li>Copy <code>Config/core.php.default</code> to <code>Config/core.php</code>.  Open the file in your favorite text editor, and change the following settings:
 											<ul>
 												<li>Change <strong>debug</strong> to 0.
@@ -106,18 +107,18 @@ $XMLDefintion = "Extensible Markup Language is a markup language that defines a 
 														<pre>Configure::write('debug', 0);</pre>
 													</div>
 												</li>
-												<li>Change <strong>Security.salt</strong> and <strong>Security.cipherSeed</strong>.
+												<li>Change <strong>Security.salt</strong> and <strong>Security.cipherSeed</strong>.  Security.salt should be a series of random letters and numbers.  The Security.cipherSeed should be a series of random numbers only.
 													<div>
 <pre>Configure::write('Security.salt', 'YOUR_SALT');
 Configure::write('Security.cipherSeed', 'YOUR_CIPHER_SEED');</pre>
 													</div>
 												</li>
-												<li>Set <strong>VTS.useCron</strong> for using a Cron Job (true) or Background Process (false).
+												<li>Set <strong>VTS.useCron</strong> for using a Cron Job (true) or Background Process (false).  You can find out more about this setting in the <a href="#configuration">Configuration</a> section of this document.
 													<div>
 														<pre>Configure::write('VTS.useCron',false);</pre>
 													</div>
 												</li>
-												<li>Set <strong>VTS.translationRequest.expires</strong> if you want translation requests to expire.
+												<li>Set <strong>VTS.translationRequest.expires</strong> if you want translation requests to expire.  You can find out more about this setting in the <a href="#configuration">Configuration</a> section of this document.
 													<div>
 														<pre>Configure::write('VTS.translationRequest.expires', false);</pre>
 													</div>
@@ -127,13 +128,13 @@ Configure::write('Security.cipherSeed', 'YOUR_CIPHER_SEED');</pre>
 														<pre>Configure::write('VTS.translationRequest.expiresIn', 1);</pre>
 													</div>
 												</li>
-												<li>Set your PHP PEAR path in the PATH environment variable.  You can find the path by logging into your server via command line, and typing  in the command <code>which pear</code>.
+												<li>Add your PHP PEAR path to the last line of the file.
 													<div>
-														<pre>putenv('PATH=' . getenv('PATH') . PATH_SEPARATOR . '/usr/local/bin');</pre>
+														<pre>putenv('PATH=' . getenv('PATH') . PATH_SEPARATOR . 'YOUR_PHP_PEAR_PATH');</pre>
 													</div>
 												</li>
 											</ul></li>
-											<li>Setup a database and database user for the app according to your hosting provider's instruction.</li>
+											<li>Setup a database for the application according to your hosting provider's instruction.  Save your database name, database user, and password information.</li>
 											<li>Copy <code>Config/database.php.default</code> to <code>Config/database.php</code>.  Open the file in your favorite text editor, and change the database settings:
 										<div>
 <pre>
@@ -151,7 +152,30 @@ public $default = array(
 </pre>
 										</div>		
 									</li>
-									<li>Setup the database & admin...</li>
+									<li>Open the <code>Config/Schema/schema.php</code> and change the Administrators information.  <strong>Make sure to change the password, and that it matches the confirm password.</strong>
+										<div>
+<pre>$admin = array('User' => array(
+				'password' => 'mypass*12', 
+				'confirm_password' => 'mypass*12', 
+				'email' => 'johnathan@missionaldigerati.org'
+															)
+);</pre>
+										</div>
+									</li>
+									<li>We will now use CakePHP's batch script to generate the database.  Log into your server via command line,  and <a href="" rel="popover" class="popover_link" data-content="The cd command will allow you to change directories." data-original-title="cd (change directory)">cd</a> into the root directory of your application.  This is the directory that holds the <strong>app</strong> directory.  Use the following command to trigger the batch script:
+									<div>
+										<pre>lib/Cake/Console/cake schema create</pre>
+									</div>
+									Answer the following questions with the correct response:<br>
+									<em>Are you sure you want to drop the table(s)?</em> <strong>y</strong><br>
+									<em>Are you sure you want to create the table(s)? (y/n)</em> <strong>y</strong><br>
+									</li>
+									<li>Finally,  open your favorite web browser and visit the url of your video translator service application.  You should be greeted with the following screenshot:
+										<div>
+											<img src="/images/docs/api_login.png" alt="Api Login Page">
+										</div>
+									</li>
+									<li>Verify that you can login, and then you can begin adding <a href="/docs/v1/api/api_keys" title="API Key Documentation">API Keys</a> to the video translator service.</li>
 								</ol>
 							</section>
 							<section id="configuration">
@@ -192,6 +216,12 @@ public $default = array(
 									<pre>Configure::write('VTS.translationRequest.expiresIn', 1);</pre>
 								</div>
 								<p>By setting an expiration on the translation requests,  <strong>ALL</strong> requests will be denied from an expired translation request.  Users will be required to request a new translation request token, and re submitted their audio files.</p>
+							</section>
+							<section id="licensing">
+								<div class="page-header">
+									<h2>Licensing</h2>
+								</div>
+								This API is released under the <a href="http://www.gnu.org/licenses/gpl-3.0-standalone.html" target="_blank">GNU General Public License v3</a>.
 							</section>
 						</div><!-- .span8 -->
 						<div class="span1">&nbsp;</div>

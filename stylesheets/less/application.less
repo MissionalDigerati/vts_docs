@@ -43,16 +43,42 @@ p {
 	}
 	
 }
+
+a {
+	cursor: pointer;
+	color: @mdAltColor2;
+	
+	&:hover {
+		color: @mdAltColor2;
+	}
+}
+
+.docs li {
+	margin: 10px 0px;
+}
+li {
+	
+	div {
+		margin: 10px 0px;
+	}
+}
+
 span.tagline {
 	color: @white;
 	font-size: 12px;
 	font-style: italic;
+	
+	a {
+		color: @mdSecondaryColor;
+		cursor: pointer;
+	}
 }
 div.slider, div.content, div.inner {
 	background-color: transparent;
 }
 div.inner div.container {
 	background-color: @white;
+	padding-bottom: 20px;
 }
 div.extra div.inner div.container {
 	background-color: @mdPrimaryColor;
@@ -123,11 +149,6 @@ ul.dropdown-menu {
 		font-weight: 300;
 		line-height: 30px;
 		margin-bottom: 30px;
-	}
-	
-	a {
-		color: @mdSecondaryColor;
-		cursor: pointer;
 	}
 	
 }
