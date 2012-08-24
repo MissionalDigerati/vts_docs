@@ -102,6 +102,7 @@
 								<h3>Response (XML)</h3>
 								<p>POST /translation_requests.xml</p>
 <pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;vts&gt;
     &lt;status&gt;success&lt;/status&gt;
     &lt;message&gt;Your translation request has been created.&lt;/message&gt;
@@ -168,6 +169,7 @@
 								<h3>Response (XML)</h3>
 								<p>GET /translation_requests/6.xml?api_key={your_api_key}</p>
 <pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;vts&gt;
     &lt;status&gt;success&lt;/status&gt;
     &lt;message/&gt;
@@ -186,6 +188,57 @@
 								<div class="page-header">
 									<h2>Delete</h2>
 								</div>
+								<dl>
+								  <dt>HTTP Request Protocol</dt>
+								  <dd>POST</dd>
+									<dt>Resource URL</dt>
+								  <dd>/translation_requests/{translation_request_id}.format (.json or .xml)</dd>
+								</dl>
+								<p>Delete the specific translation request.</p>
+								<table class="table table-hover table-condensed table-bordered table-stripped">
+									<caption>Parameters</caption>
+									<thead>
+									    <tr>
+									      <th>Name</th>
+									      <th>Description</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+											<tr>
+									      <td>translation_request_id</td>
+									      <td>The url must contain the id of the translation request you are getting details about.  You should have received this when you created the translation request. <strong>* Required</strong></td>
+									    </tr>
+									    <tr>
+									      <td>api_key</td>
+									      <td>The API key assigned to the requesting application. <strong>* Required</strong></td>
+									    </tr>
+									    <tr>
+									      <td>_method=DELETE</td>
+									      <td>Tell the server to use the HTTP request protocol DELETE. <strong>* Required</strong></td>
+									    </tr>
+									  </tbody>
+								</table>
+								<h3>Response (JSON)</h3>
+								<p>POST /translation_requests/5.json</p>
+<pre>
+{
+    "vts": {
+        "status": "success",
+        "message": "Your translation request has been deleted.",
+        "translation_request": ""
+    }
+}
+</pre>
+								<h3>Response (XML)</h3>
+								<p>POST /translation_requests/6.xml</p>
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;vts&gt;
+    &lt;status&gt;success&lt;/status&gt;
+    &lt;message&gt;Your translation request has been deleted.&lt;/message&gt;
+    &lt;translation_request/&gt;
+&lt;/vts&gt;
+</pre>
 							</section>
 						</div><!-- .span8 -->
 						<div class="span1">&nbsp;</div>
