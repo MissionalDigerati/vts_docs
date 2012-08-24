@@ -183,6 +183,15 @@ public $default = array(
 								<h4>Which Should I Use?</h4>
 								<p>It is recommended to use a cron job for handling these tasks.  This will help you keep control of server resources,  and protect your server from crashing.  Since background processes trigger when requested,  it is possible to overload the server with requests.  Also,  FFMPEG tends to be server intensive program.  Ultimately, it is a question of how many people would be using the system.  If it will only be a select few, then the background process will work fine.  For a large group of participants,  I recommend the cron job.</p>
 								<h3>Expiring Translation Requests</h3>
+								<p>If you would like to limit the length of time allowed to complete a translation, then you will most likely want to expire translation requests.  By default,  translation requests do not expire.  To setup the expiration of translation requests,  open the <code>Config/core.php</code> file.  You will want to set the <strong>VTS.translationRequest.expires</strong> to <strong>true</strong>.</p>
+								<div>
+									<pre>Configure::write('VTS.translationRequest.expires', true);</pre>
+								</div>
+								<p>Next you will need to decide the maximum number of days it should take to complete a translation request.  You will then set the <strong>VTS.translationRequest.expiresIn</strong> to the maximum number of days.</p>
+								<div>
+									<pre>Configure::write('VTS.translationRequest.expiresIn', 1);</pre>
+								</div>
+								<p>By setting an expiration on the translation requests,  <strong>ALL</strong> requests will be denied from an expired translation request.  Users will be required to request a new translation request token, and re submitted their audio files.</p>
 							</section>
 						</div><!-- .span8 -->
 						<div class="span1">&nbsp;</div>
