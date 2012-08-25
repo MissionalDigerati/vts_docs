@@ -203,7 +203,7 @@ public $default = array(
 								<div>
 									<pre>putenv('PATH=' . getenv('PATH') . PATH_SEPARATOR . '/usr/local/bin');</pre>
 								</div>
-								<p>Whenever a request is received by the server,  the system will trigger a command line request to run the <code>trigger_bg_process.php</code> file, and then will continue processing the request.  The output of the command gets funneled to a log file in  <code>tmp/logs/processor.log</code>,  which allows PHP to continue without waiting.</p>
+								<p>Whenever a request is received by the server,  the system will trigger a command line request to run the <code>trigger_bg_process.php</code> file, and then will continue processing the request.  The output of the command gets funneled to a log file in <code>tmp/logs/processor.log</code>,  which allows PHP to continue without waiting.</p>
 								<h4>Which Should I Use?</h4>
 								<p>It is recommended to use a cron job for handling these tasks.  This will help you keep control of server resources,  and protect your server from crashing.  Since background processes trigger when requested,  it is possible to overload the server with requests.  Also,  FFMPEG tends to be server intensive program.  Ultimately, it is a question of how many people would be using the system.  If it will only be a select few, then the background process will work fine.  For a large group of participants,  I recommend the cron job.</p>
 								<h3>Expiring Translation Requests</h3>

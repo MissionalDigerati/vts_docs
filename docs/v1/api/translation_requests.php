@@ -140,7 +140,7 @@
 									  <tbody>
 											<tr>
 									      <td>translation_request_id</td>
-									      <td>The url must contain the id of the translation request you are getting details about.  You should have received this when you created the translation request. <strong>* Required</strong></td>
+									      <td>The url must contain the id of the translation request you are wanting to delete.  You should have received this when you created the translation request. <strong>* Required</strong></td>
 									    </tr>
 									    <tr>
 									      <td>api_key</td>

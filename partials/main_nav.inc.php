@@ -37,6 +37,7 @@ $taglineText = (isset($taglineText)) ? $taglineText : 'A project of <a href="htt
 				<div class="nav-collapse">
 					<ul class="nav">
 						<li<?php if($requestedUrl ==''){ echo ' class="active"'; } ?>><a href="/">Home</a></li>
+						<li<?php if($requestedUrl =='preparing_your_video'){ echo ' class="active"'; } ?>><a href="/preparing_your_video">Preparing Your Video</a></li>
 						<li class="dropdown<?php if(strpos($requestedUrl, 'docs/v1/api/') !== false){ echo ' active'; } ?>" id="#api">
 							<a href="#api" class="dropdown-toggle" data-toggle="dropdown">API Documentation<b class="caret"></b></a>
 							<ul class="dropdown-menu">
