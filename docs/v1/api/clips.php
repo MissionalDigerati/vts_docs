@@ -43,10 +43,10 @@
 							<ul class="nav nav-list docs-sidenav affix-top">
 								<li class="active"><a href="#description"><i class="icon-chevron-right"></i> Description</a></li>
 								<li><a href="#create"><i class="icon-chevron-right"></i> Create</a></li>
-								<li class=""><a href="#delete"><i class="icon-chevron-right"></i> Delete</a></li>
-								<li class=""><a href="#read"><i class="icon-chevron-right"></i> Read</a></li>
-								<li class=""><a href="#read_all"><i class="icon-chevron-right"></i> Read All</a></li>
-								<li class=""><a href="#update"><i class="icon-chevron-right"></i> Update</a></li>
+								<li><a href="#delete"><i class="icon-chevron-right"></i> Delete</a></li>
+								<li><a href="#read"><i class="icon-chevron-right"></i> Read</a></li>
+								<li><a href="#read_all"><i class="icon-chevron-right"></i> Read All</a></li>
+								<li><a href="#update"><i class="icon-chevron-right"></i> Update</a></li>
 							</ul>
 						</div><!-- .span3 -->
 						<div class="span8 docs">
@@ -56,7 +56,7 @@
 							<div class="clearfix"></div>
 							<section id="description">
 									<p>If you have read the <a href="/preparing_your_video" title="Preparing Your Video Section">Preparing Your Video</a> section on this website,  you will know that every video is dissected into smaller clips.  A clip is a smaller piece of video that will need to be merged with an audio file that you provide.  This audio file is the translation for the clip.  Once all clips have been submitted,  you will need to poll the <a href="#read_all">clips -> read all</a> url to see if all of the clips were processed.  The server will respond with a variable <strong>ready_for_processing</strong>.  If it is set to <strong>YES</strong>,  then you are ready to process the final master recording.  Please visit the <a href="/docs/v1/api/workflow" title="Workflow Documentation">workflow</a> page for more details.</p>
-								<h3>Clip Attributes</h3>
+								<h3>Attributes</h3>
 								<dl>
 									<dt>id</dt>
 								  <dd>The unique identifier for the clip.</dd>
@@ -75,10 +75,10 @@
 									<dt>modified</dt>
 								  <dd>The timestamp when the the clip was last modified.</dd>
 									<dt>completed</dt>
-								  <dd>The timestamp when the clip was updated.</dd>
+								  <dd>The timestamp when the clip was completed.</dd>
 								</dl>
 								<table class="table table-hover table-condensed table-bordered table-stripped">
-									<caption>Clip Statuses</caption>
+									<caption>Statuses</caption>
 									<thead>
 									    <tr>
 									      <th>Status</th>

@@ -43,9 +43,9 @@
 							<ul class="nav nav-list docs-sidenav affix-top">
 								<li class="active"><a href="#description"><i class="icon-chevron-right"></i> Description</a></li>
 								<li><a href="#create"><i class="icon-chevron-right"></i> Create</a></li>
-								<li class=""><a href="#delete"><i class="icon-chevron-right"></i> Delete</a></li>
-								<li class=""><a href="#read"><i class="icon-chevron-right"></i> Read</a></li>
-								<li class=""><a href="#update"><i class="icon-chevron-right"></i> Update</a></li>
+								<li><a href="#delete"><i class="icon-chevron-right"></i> Delete</a></li>
+								<li><a href="#read"><i class="icon-chevron-right"></i> Read</a></li>
+								<li><a href="#update"><i class="icon-chevron-right"></i> Update</a></li>
 							</ul>
 						</div><!-- .span3 -->
 						<div class="span8 docs">
@@ -55,7 +55,7 @@
 							<div class="clearfix"></div>
 							<section id="description">
 									<p>A master recording is a video that is made up of multiple clips.  Once you have added all your clips, and the video translator service API has completed the clip processing,  you can request for a master recording to be created.  This recording will contain all your clips in ascending order based on the clip's order attribute.  Please remember that the server will need to respond with the variable <strong>ready_for_processing</strong> equal to<strong>YES</strong> on the <a href="/docs/v1/api/clips#read_all">clips -> read all</a> method,  if you want to request the processing of a master recording.  Please visit the <a href="/docs/v1/api/workflow" title="Workflow Documentation">workflow</a> page for more details.</p>
-								<h3>Master Recording Attributes</h3>
+								<h3>Attributes</h3>
 								<dl>
 									<dt>id</dt>
 								  <dd>The unique identifier for the master recording.</dd>
@@ -74,10 +74,10 @@
 									<dt>modified</dt>
 								  <dd>The timestamp when the the master recording was last modified.</dd>
 									<dt>completed</dt>
-								  <dd>The timestamp when the master recording was updated.</dd>
+								  <dd>The timestamp when the master recording was completed.</dd>
 								</dl>
 								<table class="table table-hover table-condensed table-bordered table-stripped">
-									<caption>Master Recording Statuses</caption>
+									<caption>Statuses</caption>
 									<thead>
 									    <tr>
 									      <th>Status</th>

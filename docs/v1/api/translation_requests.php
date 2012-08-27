@@ -42,9 +42,9 @@
 						<div class="span3 docs-sidebar">
 							<ul class="nav nav-list docs-sidenav affix-top">
 								<li class="active"><a href="#description"><i class="icon-chevron-right"></i> Description</a></li>
-								<li class="active"><a href="#create"><i class="icon-chevron-right"></i> Create</a></li>
-								<li class=""><a href="#delete"><i class="icon-chevron-right"></i> Delete</a></li>
-								<li class=""><a href="#read"><i class="icon-chevron-right"></i> Read</a></li>
+								<li><a href="#create"><i class="icon-chevron-right"></i> Create</a></li>
+								<li><a href="#delete"><i class="icon-chevron-right"></i> Delete</a></li>
+								<li><a href="#read"><i class="icon-chevron-right"></i> Read</a></li>
 							</ul>
 						</div><!-- .span3 -->
 						<div class="span8 docs">
@@ -54,6 +54,21 @@
 							<div class="clearfix"></div>
 							<section id="description">
 									<p>A translation request is a request to begin the translation of a video.  When you make a call to the video translator service API to create a translation request,  the server will return a translation request token.  The token looks similar to an API key, because it is a hashed string of random numbers and letters.  Here is an example of a translation request token: <code>tr0dc613163e045312e922dad9d</code>.  These tokens always start with the letters <strong>tr</strong>.  This token acts as a unique identifier for your request to translate a video, so you will need to pass it into any subsequent requests for clips or master recordings.  The translation request token can expire, if you want to limit the time between requesting a token, and the completion of the video.  See the <a href="/docs/v1/api/overview">Overview & Installation Page</a> for more details.</p>
+									<h3>Attributes</h3>
+									<dl>
+										<dt>id</dt>
+									  <dd>The unique identifier for the translation request.</dd>
+										<dt>api_key_id</dt>
+									  <dd>The unique identifier for the API key.</dd>
+										<dt>token</dt>
+									  <dd>The unique token to be used for any API requests.</dd>
+										<dt>created</dt>
+									  <dd>The timestamp when the the master recording was created.</dd>
+										<dt>modified</dt>
+									  <dd>The timestamp when the the master recording was last modified.</dd>
+										<dt>expires_at</dt>
+									  <dd>The timestamp when the translation request will expire.  It sets to 0000-00-00 00:00:00 if it does not expire.</dd>
+									</dl>
 							</section>
 							<section id="create">
 								<div class="page-header">
