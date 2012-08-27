@@ -422,6 +422,91 @@
 &lt;/vts&gt;
 </pre>
 								</section>
+								<section id="update">
+									<div class="page-header">
+										<h2>Update</h2>
+									</div>
+									<dl>
+									  <dt>HTTP Request Protocol</dt>
+									  <dd>POST</dd>
+										<dt>Resource URL</dt>
+									  <dd>/clips/{clip_id}.format (.json or .xml)</dd>
+									</dl>
+									<p>Update an existing translated clip, and reprocess it.</p>
+									<table class="table table-hover table-condensed table-bordered table-stripped">
+										<caption>Parameters</caption>
+										<thead>
+										    <tr>
+										      <th>Name</th>
+										      <th>Description</th>
+										    </tr>
+										  </thead>
+										  <tbody>
+												<tr>
+										      <td>clip_id</td>
+										      <td>The url must contain the id of the clip you wanting to update. You should have received this when you created the clip. <strong>* Required</strong></td>
+										    </tr>
+										    <tr>
+										      <td>translation_request_token</td>
+										      <td>The token associated with the translation request.  It cannot be expired. <strong>* Required</strong></td>
+										    </tr>
+												<tr>
+										      <td>video_file_location</td>
+										      <td>The location of the clip on your video translator service API server.  It should be relative to the <strong>webroot</strong> folder on the video translator service API server. <strong>* Required</strong></td>
+										    </tr>
+												<tr>
+										      <td>audio_file</td>
+										      <td>The actual audio file to merge with the video.  mp3, wav, and caf files are accepted. <strong>* Required</strong></td>
+										    </tr>
+												<tr>
+										      <td>_method=PUT</td>
+										      <td>Tell the server to use the HTTP request protocol UPDATE. <strong>* Required</strong></td>
+										    </tr>
+										  </tbody>
+									</table>
+									<h3>Response (JSON)</h3>
+									<p>POST /clips/{clip_id}.json</p>
+<pre>
+{
+    "vts": {
+        "status": "success",
+        "message": "Your clip has been modified.",
+        "clip": {
+            "id": "18",
+            "translation_request_id": "7",
+            "audio_file_location": "\/files\/clips\/bb56ce63db9f75c57274d6bac19836.mp3",
+            "video_file_location": "\/files\/master_files\/example\/the_compassionate_father_4.mp4",
+            "completed_file_location": "",
+            "status": "PENDING",
+            "created": "2012-08-24 17:13:04",
+            "modified": "2012-08-27 09:18:18",
+            "completed": "2012-08-24 17:13:49"
+        }
+    }
+}
+</pre>
+									<h3>Response (XML)</h3>
+									<p>POST /clips/{clip_id}.xml</p>
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;vts&gt;
+    &lt;status&gt;success&lt;/status&gt;
+    &lt;message&gt;Your clip has been modified.&lt;/message&gt;
+    &lt;clip&gt;
+        &lt;id&gt;18&lt;/id&gt;
+        &lt;translation_request_id&gt;7&lt;/translation_request_id&gt;
+        &lt;audio_file_location&gt;/files/clips/bb56ce63db9f75c57274d6bac19836.mp3&lt;/audio_file_location&gt;
+        &lt;video_file_location&gt;/files/master_files/example/the_compassionate_father_4.mp4&lt;/video_file_location&gt;
+        &lt;completed_file_location/&gt;
+        &lt;status&gt;PENDING&lt;/status&gt;
+        &lt;created&gt;2012-08-24 17:13:04&lt;/created&gt;
+        &lt;modified&gt;2012-08-27 09:23:14&lt;/modified&gt;
+        &lt;completed&gt;2012-08-27 09:19:10&lt;/completed&gt;
+    &lt;/clip&gt;
+&lt;/vts&gt;
+</pre>
+
+								</section>
 						</div><!-- .span8 -->
 						<div class="span1">&nbsp;</div>
 					</div><!-- .row -->
