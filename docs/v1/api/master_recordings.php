@@ -54,7 +54,7 @@
 							</div>
 							<div class="clearfix"></div>
 							<section id="description">
-									<p>A master recording is a video that is made up of multiple clips.  Once you have added all your clips, and the video translator service API has completed the clip processing,  you can request for a master recording to be created.  This recording will contain all your clips in ascending order based on the clip's order attribute.  Please remember that the server will need to respond with the variable <strong>ready_for_processing</strong> equal to<strong>YES</strong> on the <a href="/docs/v1/api/clips#read_all">clips -> read all</a> method,  if you want to request the processing of a master recording.  Please visit the <a href="/docs/v1/api/workflow" title="Workflow Documentation">workflow</a> page for more details.</p>
+									<p>A master recording is a video that is made up of multiple clips.  Once you have added all your clips, and the video translator service API has completed the clip processing,  you can request for a master recording to be created.  This recording will contain all your clips in ascending order based on the clip's order_by attribute.  Please remember that the server will need to respond with the variable <strong>ready_for_processing</strong> equal to<strong>YES</strong> on the <a href="/docs/v1/api/clips#read_all">clips -> read all</a> method,  if you want to request the processing of a master recording.  Please visit the <a href="/docs/v1/api/workflow" title="Workflow Documentation">workflow</a> page for more details.</p>
 								<h3>Attributes</h3>
 								<dl>
 									<dt>id</dt>

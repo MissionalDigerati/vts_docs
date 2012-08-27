@@ -68,6 +68,8 @@
 								  <dd>The location of the received audio file relative to the <code>webroot</code> folder on the video translator service API server.</dd>
 								  <dt>completed_file_location</dt>
 								  <dd>The location of the final processed clip relative to the <code>webroot</code> folder on the video translator service API server.</dd>
+									<dt>order_by</dt>
+								  <dd>The position this clip resides in the master recording.  All clips are appended to the master recording in ascending order of this attribute.</dd>
 									<dt>status</dt>
 								  <dd>The state of the processing of the clip.</dd>
 									<dt>created</dt>
@@ -137,6 +139,10 @@
 									      <td>audio_file</td>
 									      <td>The actual audio file to merge with the video.  mp3, wav, and caf files are accepted. <strong>* Required</strong></td>
 									    </tr>
+											<tr>
+									      <td>order_by</td>
+									      <td>The position of this clip in the master recording. <strong>* Required</strong></td>
+									    </tr>
 									  </tbody>
 								</table>
 								<h3>Response (JSON)</h3>
@@ -153,6 +159,7 @@
             "video_file_location": "\/files\/master_files\/example\/the_compassionate_father_1.mp4",
             "completed_file_location": "",
             "status": "PENDING",
+            "order_by": "1",
             "created": "2012-08-24 17:10:14",
             "modified": "2012-08-24 17:10:16",
             "completed": null
@@ -174,6 +181,7 @@
         &lt;video_file_location&gt;/files/master_files/example/the_compassionate_father_1.mp4&lt;/video_file_location&gt;
         &lt;completed_file_location/&gt;
         &lt;status&gt;PENDING&lt;/status&gt;
+        &lt;order_by&gt;1&lt;/order_by&gt;
         &lt;created&gt;2012-08-24 17:16:07&lt;/created&gt;
         &lt;modified&gt;2012-08-24 17:16:08&lt;/modified&gt;
         &lt;completed/&gt;
@@ -282,6 +290,7 @@
          "video_file_location": "\/files\/master_files\/example\/the_compassionate_father_1.mp4",
          "completed_file_location": "\/files\/clips\/completed\/18_1be2b78d433641bc4866.mp4",
          "status": "COMPLETE",
+         "order_by": "1",
          "created": "2012-08-24 17:13:04",
          "modified": "2012-08-24 17:13:05",
          "completed": "2012-08-24 17:13:49"
@@ -303,6 +312,7 @@
      &lt;video_file_location&gt;/files/master_files/example/the_compassionate_father_1.mp4&lt;/video_file_location&gt;
      &lt;completed_file_location&gt;/files/clips/completed/18_1be2b78d433641bc4866.mp4&lt;/completed_file_location&gt;
      &lt;status&gt;COMPLETE&lt;/status&gt;
+     &lt;order_by&gt;1&lt;/order_by&gt;
      &lt;created&gt;2012-08-24 17:13:04&lt;/created&gt;
      &lt;modified&gt;2012-08-24 17:13:05&lt;/modified&gt;
      &lt;completed&gt;2012-08-24 17:13:49&lt;/completed&gt;
@@ -351,6 +361,7 @@
             "video_file_location": "\/files\/master_files\/example\/the_compassionate_father_1.mp4",
             "completed_file_location": "\/files\/clips\/completed\/14_8e847e3b97d809c42296.mp4",
             "status": "COMPLETE",
+            "order_by": "1",
             "created": "2012-08-21 15:21:36",
             "modified": "2012-08-21 15:21:36",
             "completed": "2012-08-21 15:24:54"
@@ -361,6 +372,7 @@
             "video_file_location": "\/files\/master_files\/example\/the_compassionate_father_2.mp4",
             "completed_file_location": "\/files\/clips\/completed\/15_def4f6801798bd9e5c39.mp4",
             "status": "COMPLETE",
+            "order_by": "2",
             "created": "2012-08-21 15:21:49",
             "modified": "2012-08-21 15:21:49",
             "completed": "2012-08-21 15:26:21"
@@ -371,6 +383,7 @@
             "video_file_location": "\/files\/master_files\/example\/the_compassionate_father_3.mp4",
             "completed_file_location": "\/files\/clips\/completed\/16_1837423fbbd6ea2a654c.mp4",
             "status": "COMPLETE",
+            "order_by": "3",
             "created": "2012-08-21 15:22:09",
             "modified": "2012-08-21 15:22:10",
             "completed": "2012-08-21 15:26:41"
@@ -393,6 +406,7 @@
         &lt;video_file_location&gt;/files/master_files/example/the_compassionate_father_1.mp4&lt;/video_file_location&gt;
         &lt;completed_file_location&gt;/files/clips/completed/14_8e847e3b97d809c42296.mp4&lt;/completed_file_location&gt;
         &lt;status&gt;COMPLETE&lt;/status&gt;
+        &lt;order_by&gt;1&lt;/order_by&gt;
         &lt;created&gt;2012-08-21 15:21:36&lt;/created&gt;
         &lt;modified&gt;2012-08-21 15:21:36&lt;/modified&gt;
         &lt;completed&gt;2012-08-21 15:24:54&lt;/completed&gt;
@@ -404,6 +418,7 @@
         &lt;video_file_location&gt;/files/master_files/example/the_compassionate_father_2.mp4&lt;/video_file_location&gt;
         &lt;completed_file_location&gt;/files/clips/completed/15_def4f6801798bd9e5c39.mp4&lt;/completed_file_location&gt;
         &lt;status&gt;COMPLETE&lt;/status&gt;
+        &lt;order_by&gt;1&lt;/order_by&gt;
         &lt;created&gt;2012-08-21 15:21:49&lt;/created&gt;
         &lt;modified&gt;2012-08-21 15:21:49&lt;/modified&gt;
         &lt;completed&gt;2012-08-21 15:26:21&lt;/completed&gt;
@@ -415,6 +430,7 @@
         &lt;video_file_location&gt;/files/master_files/example/the_compassionate_father_3.mp4&lt;/video_file_location&gt;
         &lt;completed_file_location&gt;/files/clips/completed/16_1837423fbbd6ea2a654c.mp4&lt;/completed_file_location&gt;
         &lt;status&gt;COMPLETE&lt;/status&gt;
+        &lt;order_by&gt;1&lt;/order_by&gt;
         &lt;created&gt;2012-08-21 15:22:09&lt;/created&gt;
         &lt;modified&gt;2012-08-21 15:22:10&lt;/modified&gt;
         &lt;completed&gt;2012-08-21 15:26:41&lt;/completed&gt;
@@ -459,6 +475,10 @@
 										      <td>The actual audio file to merge with the video.  mp3, wav, and caf files are accepted. <strong>* Required</strong></td>
 										    </tr>
 												<tr>
+										      <td>order_by</td>
+										      <td>The position of this clip in the master recording. <strong>* Required</strong></td>
+										    </tr>
+												<tr>
 										      <td>_method=PUT</td>
 										      <td>Tell the server to use the HTTP request protocol UPDATE. <strong>* Required</strong></td>
 										    </tr>
@@ -478,6 +498,7 @@
             "video_file_location": "\/files\/master_files\/example\/the_compassionate_father_4.mp4",
             "completed_file_location": "",
             "status": "PENDING",
+            "order_by": "1",
             "created": "2012-08-24 17:13:04",
             "modified": "2012-08-27 09:18:18",
             "completed": "2012-08-24 17:13:49"
@@ -499,6 +520,7 @@
         &lt;video_file_location&gt;/files/master_files/example/the_compassionate_father_4.mp4&lt;/video_file_location&gt;
         &lt;completed_file_location/&gt;
         &lt;status&gt;PENDING&lt;/status&gt;
+        &lt;order_by&gt;1&lt;/order_by&gt;
         &lt;created&gt;2012-08-24 17:13:04&lt;/created&gt;
         &lt;modified&gt;2012-08-27 09:23:14&lt;/modified&gt;
         &lt;completed&gt;2012-08-27 09:19:10&lt;/completed&gt;
