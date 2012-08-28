@@ -58,12 +58,13 @@
 							<section id="access_api_keys">
 								<div class="page-header">
 									<h2>Access the API Keys</h2>
+									
+								</div>
 									<p>To access your current API keys,  open your favorite web browser and visit the location of your video translator service API web server.  You should see the following page:</p>
 									<img src="/images/docs/api_login.png" alt="Api Login Page">
 									<p>Using the credentials that you setup in the <a href="/docs/v1/api/overview">installation process</a>,  log into the website.  If you forgot your password,  you can click on the <strong>Forgot Password?</strong> button to request a password change.  Once you are logged in,  click on the <strong>API Keys</strong> link in the top right navigation.  You will be brought to the API key management page which looks like the following snapshot:</p>
 									<img src="/images/docs/api_management.png" width="800" height="269" alt="Api Management">
 									<p>From here you can add new API keys,  or revoke old API keys.  All applications using the video translator service API should have their own API key.  <strong>It is important to assign a new API key for each application, and to never give away the API key.  Do not store the API key in your public code repositories.</strong></p>
-								</div>
 							</section>
 							<section id="add_api_key">
 								<div class="page-header">
@@ -77,9 +78,9 @@
 							<section id="delete_api_key">
 								<div class="page-header">
 									<h2>Delete an API Key</h2>
+								</div>
 									<p>To delete an API key,  thereby revoking access to your video translator service API server,  log in and visit the API key management page.  Next to each API key is a link titled <strong>Delete</strong>.  Click the link, next to the appropriate API key to revoke,  and the API key will be deleted permanently.  <strong>Warning!  Once deleted,  you will need to create a new API key in order to renew an application's access to the video translator service API server.</strong></p>
 									<img src="/images/docs/api_management.png" width="800" height="269" alt="Api Management">
-								</div>
 							</section>
 						</div><!-- .span8 -->
 						<div class="span1">&nbsp;</div>
