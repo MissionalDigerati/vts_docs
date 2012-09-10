@@ -55,6 +55,10 @@ $taglineText = (isset($taglineText)) ? $taglineText : 'A project of <a href="htt
 							<a href="#plugin" class="dropdown-toggle" data-toggle="dropdown">CakePHP Plugin Docs<b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li><a href="/docs/v1/cakephp_plugin/overview">Overview & Installation</a></li>
+								<li><a href="/docs/v1/api/workflow">API Workflow</a></li>
+								<li><a href="/docs/v1/cakephp_plugin/translation_requests">Translation Requests</a></li>
+								<li><a href="/docs/v1/cakephp_plugin/clips">Clips</a></li>
+								<li><a href="/docs/v1/cakephp_plugin/master_recordings">Master Recordings</a></li>
 							</ul>
 						</li>
 						
