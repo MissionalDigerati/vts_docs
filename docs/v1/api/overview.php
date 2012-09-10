@@ -33,7 +33,7 @@ $XMLDefintion = "Extensible Markup Language is a markup language that defines a 
 	</head>
 	<body data-spy="scroll" data-target=".docs-sidebar">
 	  <?php 
-			$taglineHeader = 'API Documentation';
+			$taglineHeader = 'API Docs';
 			$taglineText = 'A single access point for all your applications.';
 			require_once('../../../partials/main_nav.inc.php'); 
 		?>

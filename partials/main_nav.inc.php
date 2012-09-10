@@ -39,7 +39,7 @@ $taglineText = (isset($taglineText)) ? $taglineText : 'A project of <a href="htt
 						<li<?php if($requestedUrl ==''){ echo ' class="active"'; } ?>><a href="/">Home</a></li>
 						<li<?php if($requestedUrl =='preparing_your_video'){ echo ' class="active"'; } ?>><a href="/preparing_your_video">Preparing Your Video</a></li>
 						<li class="dropdown<?php if(strpos($requestedUrl, 'docs/v1/api/') !== false){ echo ' active'; } ?>" id="#api">
-							<a href="#api" class="dropdown-toggle" data-toggle="dropdown">API Documentation<b class="caret"></b></a>
+							<a href="#api" class="dropdown-toggle" data-toggle="dropdown">API Docs<b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li><a href="/docs/v1/api/overview">Overview & Installation</a></li>
 								<li><a href="/docs/v1/api/workflow">Workflow</a></li>
@@ -51,7 +51,13 @@ $taglineText = (isset($taglineText)) ? $taglineText : 'A project of <a href="htt
 							</ul>
 						</li>
 						<li<?php if(strpos($requestedUrl, '/docs/v1/web_interface/') !== false){ echo ' class="active"'; } ?>><a href="/docs/v1/web_interface/overview">Sample Web Interface</a></li>
-						<li<?php if(strpos($requestedUrl, '/docs/v1/cakephp_plugin/') !== false){ echo ' class="active"'; } ?>><a href="/docs/v1/cakephp_plugin/overview">CakePHP Plugin</a></li>
+						<li class="dropdown<?php if(strpos($requestedUrl, 'docs/v1/cakephp_plugin/') !== false){ echo ' active'; } ?>" id="#plugin">
+							<a href="#plugin" class="dropdown-toggle" data-toggle="dropdown">CakePHP Plugin Docs<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="/docs/v1/cakephp_plugin/overview">Overview & Installation</a></li>
+							</ul>
+						</li>
+						
 						<li><a href="http://www.missionaldigerati.org/contact-us" target="_blank">Contact Us</a></li>
 					</ul>
 					<div class="clearfix"></div>
