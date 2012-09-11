@@ -51,7 +51,7 @@
 						</div><!-- .span3 -->
 						<div class="span8 docs">
 							<div class="pull-right">
-								<a class="btn btn-primary" href="https://github.com/MissionalDigerati/vts_api" target="_blank"><i class="icon-download-alt icon-white"></i> Download on Github</a>
+								<a class="btn btn-primary" href="https://github.com/MissionalDigerati/vts_api/tags" target="_blank"><i class="icon-download-alt icon-white"></i> Download on Github</a>
 							</div>
 							<div class="clearfix"></div>
 							<section id="description">

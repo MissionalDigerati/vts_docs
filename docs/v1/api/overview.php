@@ -52,7 +52,7 @@ $XMLDefintion = "Extensible Markup Language is a markup language that defines a 
 						</div><!-- .span3 -->
 						<div class="span8 docs">
 							<div class="pull-right">
-								<a class="btn btn-primary" href="https://github.com/MissionalDigerati/vts_api" target="_blank"><i class="icon-download-alt icon-white"></i> Download on Github</a>
+								<a class="btn btn-primary" href="https://github.com/MissionalDigerati/vts_api/tags" target="_blank"><i class="icon-download-alt icon-white"></i> Download on Github</a>
 							</div>
 							<div class="clearfix"></div>
 							<section id="description">
@@ -95,7 +95,7 @@ $XMLDefintion = "Extensible Markup Language is a markup language that defines a 
 								<p>You will need to setup a web server with all the requirements listed above.  Once it is setup,  you will need to complete the following:</p>
 								<ol>
 										<li>Download the stable version of CakePHP 2.1 from the <a href="https://github.com/cakephp/cakephp/tags" target="_blank">CakePHP Github download page</a>.</li>
-										<li>Download the latest version of the VTS API code from the <a href="https://github.com/MissionalDigerati/vts_api/tags" target="_blank" title="VTS API Github download page">VTS API Github download page</a>.</li>
+										<li>Download the latest version of the VTS API code from the <a href="https://github.com/MissionalDigerati/vts_api/tags/tags" target="_blank" title="VTS API Github download page">VTS API Github download page</a>.</li>
 										<li>Extract both downloads.</li>
 										<li>Rename the VTS API downloaded folder to <strong>app</strong>, and replace the <strong>app</strong> directory inside the CakePHP downloaded folder.</li>
 										<li>Upload the CakePHP folder to your web server.</li>
