@@ -89,6 +89,18 @@
 									    </tr>
 									  </tbody>
 								</table>
+								<h3>Example Code</h3>
+								<div>
+<pre>
+$this->TranslationRequest->create();
+if($this->TranslationRequest->save(array())) {
+	//The TranslationRequest has saved correctly
+}else {
+	//There was a problem with the saving of the TranslationRequest
+}
+</pre>
+								</div>
+								<h3>Walkthrough Code</h3>
 								<p>To create a new translation request,  you will need to:</p>
 								<ol>
 									<li>Setup <a href="/docs/v1/cakephp_plugin/accessing_models" title="Documentation on How to Access the Plugin Models">access to the plugin model "TranslationRequest"</a>.  In this case,  I am using the <code>$uses</code> attribute in the controller.</li>
@@ -113,17 +125,6 @@ if($this->TranslationRequest->save(array())) {
 										</div>
 									</li>
 								</ol>
-								<p>So your final code will look similar to this:</p>
-								<div>
-<pre>
-$this->TranslationRequest->create();
-if($this->TranslationRequest->save(array())) {
-	//The TranslationRequest has saved correctly
-}else {
-	//There was a problem with the saving of the TranslationRequest
-}
-</pre>
-								</div>
 							</section>
 							<section id="delete">
 								<div class="page-header">
@@ -145,6 +146,18 @@ if($this->TranslationRequest->save(array())) {
 									    </tr>
 									  </tbody>
 								</table>
+								<h3>Example Code</h3>
+								<div>
+<pre>
+$this->TranslationRequest->id = 1;
+if($this->TranslationRequest->delete()) {
+	//The TranslationRequest has deleted correctly
+}else {
+	//There was a problem with the deleting of the TranslationRequest
+}
+</pre>
+								</div>
+								<h3>Walkthrough Code</h3>
 								<p>To delete an existing translation request,  you will need to:</p>
 								<ol>
 									<li>Setup <a href="/docs/v1/cakephp_plugin/accessing_models" title="Documentation on How to Access the Plugin Models">access to the plugin model "TranslationRequest"</a>.  In this case,  I am using the <code>$uses</code> attribute in the controller.</li>
@@ -169,17 +182,6 @@ if($this->TranslationRequest->delete()) {
 										</div>
 									</li>
 								</ol>
-								<p>So your final code will look similar to this:</p>
-								<div>
-<pre>
-$this->TranslationRequest->id = 1;
-if($this->TranslationRequest->delete()) {
-	//The TranslationRequest has deleted correctly
-}else {
-	//There was a problem with the deleting of the TranslationRequest
-}
-</pre>
-								</div>
 							</section>
 							<section id="read">
 								<div class="page-header">
@@ -201,6 +203,11 @@ if($this->TranslationRequest->delete()) {
 									    </tr>
 									  </tbody>
 								</table>
+								<h3>Example Code</h3>
+								<div>
+									<pre>$translationRequest = $this->TranslationRequest->read(null, 5);</pre>
+								</div>
+								<h3>Walkthrough Code</h3>
 								<p>To get information about an existing translation request,  you will need to:</p>
 								<ol>
 									<li>Setup <a href="/docs/v1/cakephp_plugin/accessing_models" title="Documentation on How to Access the Plugin Models">access to the plugin model "TranslationRequest"</a>.  In this case,  I am using the <code>$uses</code> attribute in the controller.</li>
