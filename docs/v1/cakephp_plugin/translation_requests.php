@@ -92,7 +92,9 @@
 								<h3>Example Code</h3>
 								<div>
 <pre>
+// Reset model state
 $this->TranslationRequest->create();
+// Trigger CakePHP's save() method
 if($this->TranslationRequest->save(array())) {
 	//The TranslationRequest has saved correctly
 }else {
@@ -149,7 +151,9 @@ if($this->TranslationRequest->save(array())) {
 								<h3>Example Code</h3>
 								<div>
 <pre>
+// Set the TranslationRequest.id for the translation request to be deleted
 $this->TranslationRequest->id = 1;
+// Trigger the CakePHP delete() method
 if($this->TranslationRequest->delete()) {
 	//The TranslationRequest has deleted correctly
 }else {

@@ -162,7 +162,6 @@ $curlDefinition = "a computer software project providing a library and command-l
 								<h3>Example Code</h3>
 <div>
 <pre>
-// file: app/controllers/translation_clips_controller.php
 // Reset model state
 $this->Clip->create();
 // upload file
@@ -176,7 +175,7 @@ if ($data = $this->Uploader->upload('audio_file')) {
 	$this->request->data['TranslationClip']['mime_type'] = $mimeType;
 	// set the absolute path to file
 	$this->request->data['TranslationClip']['audio_file'] = $localFilePath;
-	// save the data
+	// Trigger CakePHP's save() method
 	if($this->Clip->save($this->request->data['TranslationClip'])) {
 		//The Clip has saved correctly
 	}else {
@@ -249,19 +248,234 @@ if($this->Clip->save($this->request->data['YOUR_CONTROLLERS_MAIN_MODEL'])) {
 								<div class="page-header">
 									<h2>Delete</h2>
 								</div>
-
+								<p>Delete an existing clip.</p>
+								<table class="table table-hover table-condensed table-bordered table-stripped">
+									<caption>Parameters</caption>
+									<thead>
+									    <tr>
+									      <th>Name</th>
+									      <th>Description</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+									    <tr>
+									      <td>id</td>
+												<td>The unique identifier for the clip. <strong>* Required</strong></td>
+									    </tr>
+									    <tr>
+									      <td>translation_request_token</td>
+									      <td>The token associated with the translation request.  It cannot be expired. <strong>* Required</strong></td>
+									    </tr>
+									  </tbody>
+								</table>
+								<h3>Example Code</h3>
+								<div>
+<pre>
+// Set the Clip.id for the clip to be deleted
+$this->Clip->id = 1;
+// Set the translation request token
+$this->Clip->translation_request_token = 'tr0dc613163e045312e922dad9d';
+// Trigger the CakePHP delete() method
+if($this->Clip->delete()) {
+	//The Clip has deleted correctly
+}else {
+	//There was a problem with the deleting of the Clip
+}
+</pre>
+								</div>
+								<h3>Walkthrough Code</h3>
+								<p>To delete an existing clip,  you will need to:</p>
+								<ol>
+									<li>Setup <a href="/docs/v1/cakephp_plugin/accessing_models" title="Documentation on How to Access the Plugin Models">access to the plugin model "Clip"</a>.  In this case,  I am using the <code>$uses</code> attribute in the controller.</li>
+									<li>Set the id attribute for the clip you wish to delete on the Clip object.
+										<div>
+											<pre>$this->Clip->id = 1;</pre>
+										</div>
+									</li>
+									<li>Set the translation request token attribute for the clip.
+										<div>
+											<pre>$this->Clip->translation_request_token = 'tr0dc613163e045312e922dad9d';</pre>
+										</div>
+									</li>
+									<li>Call <a href="http://book.cakephp.org/2.0/en/models/deleting-data.html#model-delete" target="_blank" title="CakePHP Documentation on Delete Method">CakePHP's delete method</a> on the model object:
+										<div>
+											<pre>$this->Clip->delete();</pre>
+										</div>
+										Since the save method returns a boolean value,  it is best to wrap the delete method in an <code>if...else</code> clause to verify the delete was completed.  Here is an example of the <code>if...else</code> clause.
+										<div>
+<pre>
+if($this->Clip->delete()) {
+	//The Clip has deleted correctly
+}else {
+	//There was a problem with the deleting of the Clip
+}
+</pre>
+										</div>
+									</li>
+								</ol>
 							</section>
 							<section id="read">
 								<div class="page-header">
 									<h2>Read</h2>
 								</div>
-
+								<p>Get detailed information about an existing clip.</p>
+								<table class="table table-hover table-condensed table-bordered table-stripped">
+									<caption>Parameters</caption>
+									<thead>
+									    <tr>
+									      <th>Name</th>
+									      <th>Description</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+									    <tr>
+									      <td>id</td>
+												<td>The unique identifier for the clip. <strong>* Required</strong></td>
+									    </tr>
+									    <tr>
+									      <td>translation_request_token</td>
+									      <td>The token associated with the translation request.  It cannot be expired. <strong>* Required</strong></td>
+									    </tr>
+									  </tbody>
+								</table>
+								<h3>Example Code</h3>
+								<div>
+<pre>
+// Add the translation request token to the conditions array
+$conditions = array(
+	'translation_request_token'	=> 'tr0dc613163e045312e922dad9d'
+);
+// Set the id of the Clip that you want to retrieve data for
+$this->Clip->id = 1;
+// Trigger the CakePHP's find method
+$clip = $this->Clip->find('first', array('conditions' => $conditions));
+</pre>
+								</div>
+								<h3>Walkthrough Code</h3>
+								<p>To read an existing clip,  you will need to:</p>
+								<ol>
+									<li>Setup <a href="/docs/v1/cakephp_plugin/accessing_models" title="Documentation on How to Access the Plugin Models">access to the plugin model "Clip"</a>.  In this case,  I am using the <code>$uses</code> attribute in the controller.</li>
+									<li>Set the translation request token attribute for the clip in a conditions array.
+										<div>
+<pre>
+$conditions = array(
+	'translation_request_token'	=> 'tr0dc613163e045312e922dad9d'
+);
+</pre>
+										</div>
+									</li>
+									<li>Set the id attribute for the clip you wish to get details about on the Clip object.
+										<div>
+											<pre>$this->Clip->id = 1;</pre>
+										</div>
+									</li>
+									<li>Call <a href="http://book.cakephp.org/2.0/en/models/retrieving-your-data.html#model-find-first" target="_blank" title="CakePHP Documentation on Read Method">CakePHP's find('first') method</a> on the model object, and pass in the conditions array:
+										<div>
+											<pre>$clip = $this->Clip->find('first', array('conditions' => $conditions));</pre>
+										</div>
+									</li>
+								</ol>
+								<p>The returned array will look like this:</p>
+								<div>
+<pre>
+array('Clip' => array( 
+	'id' => '2', 
+	'translation_request_id' => '1', 
+	'audio_file_location' => '/files/clips/a0bd7aa04c3776afeb0137bfe3ad5c.mp3', 
+	'video_file_location' => '/files/master_files/example/the_compassionate_father.mp4', 
+	'completed_file_location' => '/files/clips/completed/2_998d5e52044241087470.mp4', 
+	'order_by' => '1', 
+	'status' => 'COMPLETE', 
+	'created' => '2012-08-27 12:57:52', 
+	'modified' => '2012-08-27 12:57:52', 
+	'completed' => '2012-08-27 13:40:22' 
+	)
+);
+</pre>
+								</div>
 							</section>
 							<section id="read_all">
 								<div class="page-header">
 									<h2>Read All</h2>
 								</div>
-
+								<p>Get detailed information about all clips associated with a translation request token.</p>
+								<table class="table table-hover table-condensed table-bordered table-stripped">
+									<caption>Parameters</caption>
+									<thead>
+									    <tr>
+									      <th>Name</th>
+									      <th>Description</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+									    <tr>
+									      <td>translation_request_token</td>
+									      <td>The token associated with the translation request.  It cannot be expired. <strong>* Required</strong></td>
+									    </tr>
+									  </tbody>
+								</table>
+								<h3>Example Code</h3>
+								<div>
+<pre>
+// Add the translation request token to the conditions array
+$conditions = array(
+	'translation_request_token'	=> 'tr0dc613163e045312e922dad9d'
+);
+// Trigger the CakePHP's find method
+$clip = $this->Clip->find('all', array('conditions' => $conditions));
+</pre>
+								</div>
+								<h3>Walkthrough Code</h3>
+								<p>To read all clips associated with a translation request token,  you will need to:</p>
+								<ol>
+									<li>Setup <a href="/docs/v1/cakephp_plugin/accessing_models" title="Documentation on How to Access the Plugin Models">access to the plugin model "Clip"</a>.  In this case,  I am using the <code>$uses</code> attribute in the controller.</li>
+									<li>Set the translation request token attribute in a conditions array.
+										<div>
+<pre>
+$conditions = array(
+	'translation_request_token'	=> 'tr0dc613163e045312e922dad9d'
+);
+</pre>
+										</div>
+									</li>
+									<li>Call <a href="http://book.cakephp.org/2.0/en/models/retrieving-your-data.html#model-find-all" target="_blank" title="CakePHP Documentation on Read Method">CakePHP's find('all') method</a> on the model object, and pass in the conditions array:
+										<div>
+											<pre>$clips = $this->Clip->find('all', array('conditions' => $conditions));</pre>
+										</div>
+									</li>
+								</ol>
+								<p>The returned array will look like this:</p>
+								<div>
+<pre>
+array('Clips' => array( 
+	'0' => array( 
+		'id' => '18', 
+		'translation_request_id' => '3',
+		'audio_file_location' => '/files/clips/b366c28e7a82d28aef656418a23c28.mp3', 
+		'video_file_location' => '/files/master_files/example/compass_father.mp4',
+		'completed_file_location' => '/files/clips/completed/18_14f07a7470c92f3.mp4',
+		'order_by' => '1',
+		'status' => 'COMPLETE',
+		'created' => '2012-09-10 14:39:40',
+		'modified' => '2012-09-10 14:39:41',
+		'completed' => '2012-09-10 14:40:37'
+	),
+		'1' => array('id' => '19',
+		'translation_request_id' => '3',
+		'audio_file_location' => '/files/clips/214efcef091e2c2bee4dd9bc3dc826.mp3',
+		'video_file_location' => '/files/master_files/example/compass_father.mp4',
+		'completed_file_location' => '/files/clips/completed/19_729c97387f37e55.mp4',
+		'order_by' => '2',
+		'status' => 'COMPLETE',
+		'created' => '2012-09-10 15:09:04',
+		'modified' => '2012-09-10 15:09:05',
+		'completed' => '2012-09-10 15:09:56 
+	)
+), 
+'Translation' => array('ready_for_processing' => 'YES)
+);
+</pre>
+								</div>
 							</section>
 							<section id="update">
 								<div class="page-header">
