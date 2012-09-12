@@ -104,7 +104,7 @@ $curlDefinition = "a computer software project providing a library and command-l
 									    </tr>
 											<tr>
 									      <td>ERROR</td>
-									      <td>Their was an error in the processing of the clip.  Check the log file in <code>tmp/logs/processor.log</code> for more information.</td>
+									      <td>Their was an error in the processing of the clip.  Check the log file on the API server located at <code>tmp/logs/processor.log</code> for more information.</td>
 									    </tr>
 									  </tbody>
 								</table>
