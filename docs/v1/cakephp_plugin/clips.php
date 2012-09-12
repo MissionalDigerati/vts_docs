@@ -481,7 +481,129 @@ array('Clips' => array(
 								<div class="page-header">
 									<h2>Update</h2>
 								</div>
-
+								<p>Update an existing translated clip, and prepare it for processing.</p>
+								<table class="table table-hover table-condensed table-bordered table-stripped">
+									<caption>Parameters</caption>
+									<thead>
+									    <tr>
+									      <th>Name</th>
+									      <th>Description</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+									    <tr>
+									      <td>translation_request_token</td>
+									      <td>The token associated with the translation request.  It cannot be expired. <strong>* Required</strong></td>
+									    </tr>
+											<tr>
+									      <td>video_file_location</td>
+									      <td>The location of the clip on your video translator service API server.  It should be relative to the <strong>webroot</strong> folder on the video translator service API server. <strong>* Required</strong></td>
+									    </tr>
+											<tr>
+									      <td>audio_file</td>
+									      <td>The absolute path to the local audio file.  mp3, wav, and caf files are accepted. <strong>* Required</strong></td>
+									    </tr>
+											<tr>
+									      <td>mime_type</td>
+									      <td>The <a href="" rel="popover" class="popover_link" data-content="<?php echo $mimeTypeDefinition; ?>" data-original-title="Mime Type">mime type</a> of the audio file. <strong>* Required</strong></td>
+									    </tr>
+											<tr>
+									      <td>order_by</td>
+									      <td>The position of this clip in the master recording. <strong>* Required</strong></td>
+									    </tr>
+									  </tbody>
+								</table>
+								<h3>Requirements</h3>
+								<p>In order to edit an existing clip,  you will need to:</p>
+								<ol>
+									 <li>
+										Encrypt your form with <strong>"multipart/form-data"</strong>.  If you are using the <a href="http://book.cakephp.org/2.0/en/core-libraries/helpers/form.html" target="_blank" title="CakePHP FormHelper Documentation">CakePHP FormHelper</a>,  you can set the type of the form equal to <em>file</em> like this:
+										<div>
+											<pre>&lt;?php echo $this->Form->create('YOUR_CONTROLLERS_MAIN_MODEL', array('type' => 'file')); ?&gt;</pre>
+										</div>
+										<em>Please change YOUR_CONTROLLERS_MAIN_MODEL to the main model for the current controller.</em>
+									</li>
+									<li>
+										You will also need to add functionality to upload the file to the server, and to read the file's <a href="" rel="popover" class="popover_link" data-content="<?php echo $mimeTypeDefinition; ?>" data-original-title="Mime Type">mime type</a>. You can use a CakePHP plugin like <a href="http://milesj.me/code/cakephp/uploader" target="_blank">Miles Johnson's Uploader</a>.  I am using this plugin in the examples below.
+									</li>
+								</ol>
+								<h3>Example Code</h3>
+<div>
+<pre>
+// upload file
+if ($data = $this->Uploader->upload('audio_file')) {
+	// the file was uploaded
+	// remove the leading directory seperator
+	$localFilePath = WWW_ROOT.substr($data['path'], 1);
+	$mimeType = $this->Uploader->mimeType($localFilePath);
+	// set the mime type
+	// TranslationClip is the main model for my TranslationClipsController
+	$this->request->data['TranslationClip']['mime_type'] = $mimeType;
+	// set the absolute path to file
+	$this->request->data['TranslationClip']['audio_file'] = $localFilePath;
+	// Trigger CakePHP's save() method
+	if($this->Clip->save($this->request->data['TranslationClip'])) {
+		//The Clip has saved correctly
+	}else {
+		//There was a problem with the saving of the Clip
+	}
+}else {
+	throw new CakeException(__('Unable to upload the clip.'));
+}
+</pre>
+</div>
+								<h3>Walkthrough Code</h3>
+								<p>Now you can setup the controller/model to update the clip.</p>
+								<ol>
+									<li>Setup <a href="/docs/v1/cakephp_plugin/accessing_models" title="Documentation on How to Access the Plugin Models">access to the plugin model "Clip"</a>.  In this case,  I am using the <code>$uses</code> attribute in the controller.</li>
+									<li>Upload your audio file to the server.  Using <a href="http://milesj.me/code/cakephp/uploader" target="_blank">Miles Johnson's Uploader</a> plugin,  you can use this bit of code to manually upload the file:
+										<div>
+<pre>
+if ($data = $this->Uploader->upload('audio_file')) {
+	// the file was uploaded
+}else {
+	throw new CakeException(__('Unable to upload the clip.'));
+}
+</pre>
+										</div>
+										<em>Please note that the audio file input is titled "audio_file"</em>
+									</li>
+									<li>
+										Now retrieve the <a href="" rel="popover" class="popover_link" data-content="<?php echo $mimeTypeDefinition; ?>" data-original-title="Mime Type">mime type</a> of the file, and save it to your <code>$this->request->data</code> array.  Using <a href="http://milesj.me/code/cakephp/uploader" target="_blank">Miles Johnson's Uploader</a> plugin,  you can use this bit of code to get the <a href="" rel="popover" class="popover_link" data-content="<?php echo $mimeTypeDefinition; ?>" data-original-title="Mime Type">mime type</a>:
+										<div>
+<pre>
+// remove the leading directory seperator
+$localFilePath = WWW_ROOT.substr($data['path'], 1);
+$mimeType = $this->Uploader->mimeType($localFilePath);
+$this->request->data['YOUR_CONTROLLERS_MAIN_MODEL']['mime_type'] = $mimeType;
+</pre>
+										</div>
+										<em>Please change YOUR_CONTROLLERS_MAIN_MODEL to the main model for the current controller.</em>
+									</li>
+									<li>
+										Now that the file has been uploaded,  you should set the <em>audio_file</em> in your <code>$this->request->data</code> array to the <strong>absolute path</strong> on your server.  The data source uses <a href="" rel="popover" class="popover_link" data-content="<?php echo $curlDefinition; ?>" data-original-title="cURL">cURL</a> to upload the file to the API, and requires the <strong>absolute path</strong>.  You can set it like this:
+										<div>
+											<pre>$this->request->data['YOUR_CONTROLLERS_MAIN_MODEL']['audio_file'] = $localFilePath;</pre>
+										</div>
+										<em>Please change YOUR_CONTROLLERS_MAIN_MODEL to the main model for the current controller.</em>
+									</li>
+									<li>Call <a href="http://book.cakephp.org/2.0/en/models/saving-your-data.html#model-save-array-data-null-boolean-validate-true-array-fieldlist-array" target="_blank" title="CakePHP Documentation on Save Method">CakePHP's save method</a> on the model object, and pass the <code>$this->request->data</code> as its first parameter:
+										<div>
+											<pre>$this->Clip->save($this->request->data['YOUR_CONTROLLERS_MAIN_MODEL']);</pre>
+										</div>
+										<em>Please change YOUR_CONTROLLERS_MAIN_MODEL to the main model for the current controller.</em><br><br>
+										Since the save method returns a boolean value,  it is best to wrap the save method in an <code>if...else</code> clause to verify the save was completed.  Here is an example of the <code>if...else</code> clause.
+										<div>
+<pre>
+if($this->Clip->save($this->request->data['YOUR_CONTROLLERS_MAIN_MODEL'])) {
+	// The Clip has saved correctly
+}else {
+	// There was a problem with the saving of the Clip
+}
+</pre>
+										</div>
+									</li>
+								</ol>
 							</section>
 						</div><!-- .span8 -->
 						<div class="span1">&nbsp;</div>
