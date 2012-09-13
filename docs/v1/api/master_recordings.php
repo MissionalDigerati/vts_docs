@@ -207,7 +207,7 @@
 									  <tbody>
 											<tr>
 									      <td>master_recording_id</td>
-									      <td>The url must contain the id of the master recording you wanting to delete.  You should have received this when you created the master recording. <strong>* Required</strong></td>
+									      <td>The url must contain the id of the master recording you are wanting to delete.  You should have received this when you created the master recording. <strong>* Required</strong></td>
 									    </tr>
 											<tr>
 									      <td>translation_request_token</td>
