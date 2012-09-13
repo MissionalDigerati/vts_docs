@@ -180,17 +180,70 @@ if($this->MasterRecording->save($this->request->data['YOUR_CONTROLLERS_MAIN_MODE
 								<div class="page-header">
 									<h2>Delete</h2>
 								</div>
-								<p>Delete an existing master recording.</p>
-								
+								<p>Delete the specific master recording.  This will also remove the file associated with the master recording.</p>
+								<table class="table table-hover table-condensed table-bordered table-stripped">
+									<caption>Parameters</caption>
+									<thead>
+									    <tr>
+									      <th>Name</th>
+									      <th>Description</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+											<tr>
+									      <td>master_recording_id</td>
+									      <td>The id of the master recording you want to delete. <strong>* Required</strong></td>
+									    </tr>
+											<tr>
+									      <td>translation_request_token</td>
+									      <td>The token associated with the translation request.  It cannot be expired. <strong>* Required</strong></td>
+									    </tr>
+									  </tbody>
+								</table>
 								<h3>Example Code</h3>
 								<div>
 <pre>
+// Set the MasterRecording.id to be deleted
+$this->MasterRecording->id = 1;
+// Set the translation_request_token for access
+$this->MasterRecording->translation_request_token = 'tr73402779879c1af31fc964e76';
+// Trigger the CakePHP's delete() method
+if($this->MasterRecording->delete()) {
+	// The MasterRecording was successfully deleted 
+}else {
+	// There was a problem deleting the MasterRecording
+}
 </pre>
 								</div>
 								<h3>Walkthrough Code</h3>
 								<p>To delete an existing master recording,  you will need to:</p>
 								<ol>
 									<li>Setup <a href="/docs/v1/cakephp_plugin/accessing_models" title="Documentation on How to Access the Plugin Models">access to the plugin model "TranslationRequest"</a>.  In this case,  I am using the <code>$uses</code> attribute in the controller.</li>
+									<li>Set the id attribute for the master recording you wish to delete on the MasterRecording object.
+										<div>
+											<pre>$this->MasterRecording->id = 1;</pre>
+										</div>
+									</li>
+									<li>Set the translation request token attribute for the master recording.
+										<div>
+											<pre>$this->MasterRecording->translation_request_token = 'tr73402779879c1af31fc964e76';</pre>
+										</div>
+									</li>
+									<li>Call <a href="http://book.cakephp.org/2.0/en/models/deleting-data.html#model-delete" target="_blank" title="CakePHP Documentation on Delete Method">CakePHP's delete method</a> on the model object:
+										<div>
+											<pre>$this->MasterRecording->delete();</pre>
+										</div>
+										Since the save method returns a boolean value,  it is best to wrap the delete method in an <code>if...else</code> clause to verify the delete was completed.  Here is an example of the <code>if...else</code> clause.
+										<div>
+<pre>
+if($this->MasterRecording->delete()) {
+	//The MasterRecording has deleted correctly
+}else {
+	//There was a problem with the deleting of the MasterRecording
+}
+</pre>
+										</div>
+									</li>
 								</ol>
 							</section>
 							<section id="read">
