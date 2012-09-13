@@ -198,7 +198,7 @@
 								  <dt>HTTP Request Protocol</dt>
 								  <dd>POST</dd>
 									<dt>Resource URL</dt>
-								  <dd>/clips/{clip_id}.format (.json or .xml)</dd>
+								  <dd>/clips/{id}.format (.json or .xml)</dd>
 								</dl>
 								<p>Delete the specific clip.  This will also remove the file associated with the clip.</p>
 								<table class="table table-hover table-condensed table-bordered table-stripped">
@@ -211,7 +211,7 @@
 									  </thead>
 									  <tbody>
 											<tr>
-									      <td>clip_id</td>
+									      <td>id</td>
 									      <td>The url must contain the id of the clip you wanting to delete.  You should have received this when you created the clip. <strong>* Required</strong></td>
 									    </tr>
 											<tr>
@@ -254,7 +254,7 @@
 					  <dt>HTTP Request Protocol</dt>
 					  <dd>GET</dd>
 						<dt>Resource URL</dt>
-					  <dd>/clips/{clip_id}.format (.json or .xml)?translation_request_token={your_translation_request_token}</dd>
+					  <dd>/clips/{id}.format (.json or .xml)?translation_request_token={your_translation_request_token}</dd>
 					</dl>
 					<p>Retrieve the details of a specific clip.</p>
 					<table class="table table-hover table-condensed table-bordered table-stripped">
@@ -267,7 +267,7 @@
 						  </thead>
 						  <tbody>
 								<tr>
-						      <td>clip_id</td>
+						      <td>id</td>
 						      <td>The url must contain the id of the clip you wanting to delete.  You should have received this when you created the clip. <strong>* Required</strong></td>
 						    </tr>
 								<tr>
@@ -446,7 +446,7 @@
 									  <dt>HTTP Request Protocol</dt>
 									  <dd>POST</dd>
 										<dt>Resource URL</dt>
-									  <dd>/clips/{clip_id}.format (.json or .xml)</dd>
+									  <dd>/clips/{id}.format (.json or .xml)</dd>
 									</dl>
 									<p>Update an existing translated clip, and reprocess it.</p>
 									<table class="table table-hover table-condensed table-bordered table-stripped">
@@ -459,7 +459,7 @@
 										  </thead>
 										  <tbody>
 												<tr>
-										      <td>clip_id</td>
+										      <td>id</td>
 										      <td>The url must contain the id of the clip you wanting to update. You should have received this when you created the clip. <strong>* Required</strong></td>
 										    </tr>
 										    <tr>
@@ -485,7 +485,7 @@
 										  </tbody>
 									</table>
 									<h3>Response (JSON)</h3>
-									<p>POST /clips/{clip_id}.json</p>
+									<p>POST /clips/{id}.json</p>
 <pre>
 {
     "vts": {
@@ -507,7 +507,7 @@
 }
 </pre>
 									<h3>Response (XML)</h3>
-									<p>POST /clips/{clip_id}.xml</p>
+									<p>POST /clips/{id}.xml</p>
 <pre>
 &lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;vts&gt;
