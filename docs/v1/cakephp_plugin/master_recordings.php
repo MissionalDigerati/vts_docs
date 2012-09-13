@@ -109,7 +109,33 @@
 									<h2>Create</h2>
 								</div>
 								<p>Create a new master recording, and trigger the process of merging all clips associated with the translation request token ordered by Clip.order_by field.</p>
-
+								<table class="table table-hover table-condensed table-bordered table-stripped">
+									<caption>Parameters</caption>
+									<thead>
+									    <tr>
+									      <th>Name</th>
+									      <th>Description</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+									    <tr>
+									      <td>translation_request_token</td>
+									      <td>The token associated with the translation request.  It cannot be expired. <strong>* Required</strong></td>
+									    </tr>
+											<tr>
+									      <td>title</td>
+									      <td>The title for the final master recording. <strong>* Required</strong></td>
+									    </tr>
+											<tr>
+									      <td>language</td>
+									      <td>The language of the new master recording. <strong>* Required</strong></td>
+									    </tr>
+											<tr>
+									      <td>final_filename</td>
+									      <td>The name of the final file. <strong>* Required</strong></td>
+									    </tr>
+									  </tbody>
+								</table>
 								<h3>Example Code</h3>
 								<div>
 <pre>
