@@ -193,7 +193,7 @@
 								  <dt>HTTP Request Protocol</dt>
 								  <dd>POST</dd>
 									<dt>Resource URL</dt>
-								  <dd>/master_recordings/{master_recording_id}.format (.json or .xml)</dd>
+								  <dd>/master_recordings/{id}.format (.json or .xml)</dd>
 								</dl>
 								<p>Delete the specific master recording.  This will also remove the file associated with the master recording.</p>
 								<table class="table table-hover table-condensed table-bordered table-stripped">
@@ -206,7 +206,7 @@
 									  </thead>
 									  <tbody>
 											<tr>
-									      <td>master_recording_id</td>
+									      <td>id</td>
 									      <td>The url must contain the id of the master recording you are wanting to delete.  You should have received this when you created the master recording. <strong>* Required</strong></td>
 									    </tr>
 											<tr>
@@ -249,7 +249,7 @@
 					  <dt>HTTP Request Protocol</dt>
 					  <dd>GET</dd>
 						<dt>Resource URL</dt>
-					  <dd>/master_recordings/{master_recording_id}.format (.json or .xml)?translation_request_token={your_translation_request_token}</dd>
+					  <dd>/master_recordings/{id}.format (.json or .xml)?translation_request_token={your_translation_request_token}</dd>
 					</dl>
 					<p>Retrieve the details of a specific master recording.</p>
 					<table class="table table-hover table-condensed table-bordered table-stripped">
@@ -262,7 +262,7 @@
 						  </thead>
 						  <tbody>
 								<tr>
-						      <td>master_recording_id</td>
+						      <td>id</td>
 						      <td>The url must contain the id of the master recording you wanting to read.  You should have received this when you created the master recording. <strong>* Required</strong></td>
 						    </tr>
 								<tr>
@@ -321,7 +321,7 @@
 								  <dt>HTTP Request Protocol</dt>
 								  <dd>POST</dd>
 									<dt>Resource URL</dt>
-								  <dd>/master_recordings/{master_recording_id}.format (.json or .xml)</dd>
+								  <dd>/master_recordings/{id}.format (.json or .xml)</dd>
 								</dl>
 								<p>Update an existing master recording, and reprocess it.</p>
 								<table class="table table-hover table-condensed table-bordered table-stripped">
@@ -334,7 +334,7 @@
 									  </thead>
 									  <tbody>
 											<tr>
-									      <td>master_recording_id</td>
+									      <td>id</td>
 									      <td>The url must contain the id of the master recording you wanting to delete.  You should have received this when you created the master recording. <strong>* Required</strong></td>
 									    </tr>
 									    <tr>
@@ -355,7 +355,7 @@
 									  </tbody>
 								</table>
 								<h3>Response (JSON)</h3>
-								<p>POST /master_recordings/{master_recording_id}.json</p>
+								<p>POST /master_recordings/{id}.json</p>
 <pre>
 {
     "vts": {
@@ -376,7 +376,7 @@
 }
 </pre>
 								<h3>Response (XML)</h3>
-								<p>/master_recordings/{master_recording_id}.xml</p>
+								<p>/master_recordings/{id}.xml</p>
 <pre>
 &lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;vts&gt;
