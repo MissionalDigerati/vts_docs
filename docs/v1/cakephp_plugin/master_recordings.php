@@ -191,7 +191,7 @@ if($this->MasterRecording->save($this->request->data['YOUR_CONTROLLERS_MAIN_MODE
 									  </thead>
 									  <tbody>
 											<tr>
-									      <td>master_recording_id</td>
+									      <td>id</td>
 									      <td>The id of the master recording you want to delete. <strong>* Required</strong></td>
 									    </tr>
 											<tr>
@@ -250,19 +250,74 @@ if($this->MasterRecording->delete()) {
 								<div class="page-header">
 									<h2>Read</h2>
 								</div>
-								<p>Get information about an existing master recording.</p>
+								<p>Retrieve the details of a specific master recording.</p>
+								<table class="table table-hover table-condensed table-bordered table-stripped">
+									<caption>Parameters</caption>
+									<thead>
+									    <tr>
+									      <th>Name</th>
+									      <th>Description</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+											<tr>
+									      <td>id</td>
+									      <td>The id of the master recording you wanting to get details about. <strong>* Required</strong></td>
+									    </tr>
+											<tr>
+									      <td>translation_request_token</td>
+									      <td>The token associated with the translation request.  It cannot be expired. <strong>* Required</strong></td>
+									    </tr>
+									  </tbody>
+								</table>
 								<h3>Example Code</h3>
 								<div>
-									<pre></pre>
+<pre>
+// Set up the conditions
+$conditions = array(	
+		'id' => 4,
+	 	'translation_request_token' => 'trd03e86521a490ac2e49ce4af7'
+);
+// Trigger CakePHP's find() method
+$masterRecording = $this->MasterRecording->find('first', array('conditions' => $conditions));
+</pre>
 								</div>
 								<h3>Walkthrough Code</h3>
 								<p>To get information about an existing master recording,  you will need to:</p>
 								<ol>
 									<li>Setup <a href="/docs/v1/cakephp_plugin/accessing_models" title="Documentation on How to Access the Plugin Models">access to the plugin model "MasterRecording"</a>.  In this case,  I am using the <code>$uses</code> attribute in the controller.</li>
+									<li>Set the translation request token and id attributes for the master recording in a conditions array.
+										<div>
+<pre>
+$conditions = array(	
+		'id' => 4,
+	 	'translation_request_token' => 'trd03e86521a490ac2e49ce4af7'
+);
+</pre>
+										</div>
+									</li>
+									<li>Call <a href="http://book.cakephp.org/2.0/en/models/retrieving-your-data.html#model-find-first" target="_blank" title="CakePHP Documentation on Read Method">CakePHP's find('first') method</a> on the model object, and pass in the conditions array:
+										<div>
+											<pre>$masterRecording = $this->MasterRecording->find('first', array('conditions' => $conditions));</pre>
+										</div>
+									</li>
 								</ol>
 								<p>The returned array will look like this:</p>
 								<div>
 <pre>
+array ('MasterRecording' => 
+	array(
+		'id' => '4',
+		'translation_request_id' => '1',
+		'title' => 'Compassionate Father',
+		'language' => 'Portuguese',
+		'final_filename' => '4_translated_video',
+		'status' => 'COMPLETE',
+		'modified' => '2012-09-13 11:58:00',
+		'created' =>  '2012-09-13 11:58:00',
+		'completed' => '2012-09-13 11:58:03'
+	)
+);
 </pre>
 								</div>
 							</section>
