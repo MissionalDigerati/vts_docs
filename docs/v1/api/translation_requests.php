@@ -141,7 +141,7 @@
 								  <dt>HTTP Request Protocol</dt>
 								  <dd>POST</dd>
 									<dt>Resource URL</dt>
-								  <dd>/translation_requests/{translation_request_id}.format (.json or .xml)</dd>
+								  <dd>/translation_requests/{id}.format (.json or .xml)</dd>
 								</dl>
 								<p>Delete the specific translation request.</p>
 								<table class="table table-hover table-condensed table-bordered table-stripped">
@@ -154,7 +154,7 @@
 									  </thead>
 									  <tbody>
 											<tr>
-									      <td>translation_request_id</td>
+									      <td>id</td>
 									      <td>The url must contain the id of the translation request you are wanting to delete.  You should have received this when you created the translation request. <strong>* Required</strong></td>
 									    </tr>
 									    <tr>
@@ -197,7 +197,7 @@
 								  <dt>HTTP Request Protocol</dt>
 								  <dd>GET</dd>
 									<dt>Resource URL</dt>
-								  <dd>/translation_requests/{translation_request_id}.format (.json or .xml)?api_key={your_api_key}</dd>
+								  <dd>/translation_requests/{id}.format (.json or .xml)?api_key={your_api_key}</dd>
 								</dl>
 								<p>Retrieve the details of a specific translation request.</p>
 								<table class="table table-hover table-condensed table-bordered table-stripped">
@@ -210,7 +210,7 @@
 									  </thead>
 									  <tbody>
 											<tr>
-									      <td>translation_request_id</td>
+									      <td>id</td>
 									      <td>The url must contain the id of the translation request you are getting details about.  You should have received this when you created the translation request. <strong>* Required</strong></td>
 									    </tr>
 									    <tr>
