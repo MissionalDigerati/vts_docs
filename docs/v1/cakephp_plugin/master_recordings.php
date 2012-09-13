@@ -218,7 +218,7 @@ if($this->MasterRecording->delete()) {
 								<h3>Walkthrough Code</h3>
 								<p>To delete an existing master recording,  you will need to:</p>
 								<ol>
-									<li>Setup <a href="/docs/v1/cakephp_plugin/accessing_models" title="Documentation on How to Access the Plugin Models">access to the plugin model "TranslationRequest"</a>.  In this case,  I am using the <code>$uses</code> attribute in the controller.</li>
+									<li>Setup <a href="/docs/v1/cakephp_plugin/accessing_models" title="Documentation on How to Access the Plugin Models">access to the plugin model "MasterRecording"</a>.  In this case,  I am using the <code>$uses</code> attribute in the controller.</li>
 									<li>Set the id attribute for the master recording you wish to delete on the MasterRecording object.
 										<div>
 											<pre>$this->MasterRecording->id = 1;</pre>
@@ -258,7 +258,7 @@ if($this->MasterRecording->delete()) {
 								<h3>Walkthrough Code</h3>
 								<p>To get information about an existing master recording,  you will need to:</p>
 								<ol>
-									<li>Setup <a href="/docs/v1/cakephp_plugin/accessing_models" title="Documentation on How to Access the Plugin Models">access to the plugin model "TranslationRequest"</a>.  In this case,  I am using the <code>$uses</code> attribute in the controller.</li>
+									<li>Setup <a href="/docs/v1/cakephp_plugin/accessing_models" title="Documentation on How to Access the Plugin Models">access to the plugin model "MasterRecording"</a>.  In this case,  I am using the <code>$uses</code> attribute in the controller.</li>
 								</ol>
 								<p>The returned array will look like this:</p>
 								<div>
