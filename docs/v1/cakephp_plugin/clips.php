@@ -341,12 +341,11 @@ if($this->Clip->delete()) {
 								<h3>Example Code</h3>
 								<div>
 <pre>
-// Add the translation request token to the conditions array
+// Add the translation request token & id to the conditions array
 $conditions = array(
-	'translation_request_token'	=> 'tr0dc613163e045312e922dad9d'
+	'translation_request_token'	=> 'tr0dc613163e045312e922dad9d',
+	'id' => 2
 );
-// Set the id of the Clip that you want to retrieve data for
-$this->Clip->id = 1;
 // Trigger the CakePHP's find method
 $clip = $this->Clip->find('first', array('conditions' => $conditions));
 </pre>
@@ -355,18 +354,14 @@ $clip = $this->Clip->find('first', array('conditions' => $conditions));
 								<p>To read an existing clip,  you will need to:</p>
 								<ol>
 									<li>Setup <a href="/docs/v1/cakephp_plugin/accessing_models" title="Documentation on How to Access the Plugin Models">access to the plugin model "Clip"</a>.  In this case,  I am using the <code>$uses</code> attribute in the controller.</li>
-									<li>Set the translation request token attribute for the clip in a conditions array.
+									<li>Set the translation request token and id attributes for the clip in a conditions array.
 										<div>
 <pre>
 $conditions = array(
-	'translation_request_token'	=> 'tr0dc613163e045312e922dad9d'
+	'translation_request_token'	=> 'tr0dc613163e045312e922dad9d',
+	'id' => 2
 );
 </pre>
-										</div>
-									</li>
-									<li>Set the id attribute for the clip you wish to get details about on the Clip object.
-										<div>
-											<pre>$this->Clip->id = 1;</pre>
 										</div>
 									</li>
 									<li>Call <a href="http://book.cakephp.org/2.0/en/models/retrieving-your-data.html#model-find-first" target="_blank" title="CakePHP Documentation on Read Method">CakePHP's find('first') method</a> on the model object, and pass in the conditions array:
