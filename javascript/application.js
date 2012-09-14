@@ -32,4 +32,5 @@ $(document).ready(function() {
     , bottom: 270
     }
   });
+	$('.carousel').carousel({interval: 7000});
 });

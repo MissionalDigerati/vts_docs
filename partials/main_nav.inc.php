@@ -50,7 +50,7 @@ $taglineText = (isset($taglineText)) ? $taglineText : 'A project of <a href="htt
 								<li><a href="/docs/v1/api/response_codes">Response Codes</a></li>
 							</ul>
 						</li>
-						<li<?php if(strpos($requestedUrl, '/docs/v1/web_interface/') !== false){ echo ' class="active"'; } ?>><a href="/docs/v1/web_interface/overview">Sample Web Interface</a></li>
+						<li<?php if(strpos($requestedUrl, 'docs/v1/web_interface/') !== false){ echo ' class="active"'; } ?>><a href="/docs/v1/web_interface/overview">Sample Web Interface</a></li>
 						<li class="dropdown<?php if(strpos($requestedUrl, 'docs/v1/cakephp_plugin/') !== false){ echo ' active'; } ?>" id="#plugin">
 							<a href="#plugin" class="dropdown-toggle" data-toggle="dropdown">CakePHP Plugin Docs<b class="caret"></b></a>
 							<ul class="dropdown-menu">

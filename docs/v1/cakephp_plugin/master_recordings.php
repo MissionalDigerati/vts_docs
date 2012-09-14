@@ -233,7 +233,7 @@ if($this->MasterRecording->delete()) {
 										<div>
 											<pre>$this->MasterRecording->delete();</pre>
 										</div>
-										Since the save method returns a boolean value,  it is best to wrap the delete method in an <code>if...else</code> clause to verify the delete was completed.  Here is an example of the <code>if...else</code> clause.
+										Since the delete method returns a boolean value,  it is best to wrap the delete method in an <code>if...else</code> clause to verify the delete was completed.  Here is an example of the <code>if...else</code> clause.
 										<div>
 <pre>
 if($this->MasterRecording->delete()) {
@@ -262,7 +262,7 @@ if($this->MasterRecording->delete()) {
 									  <tbody>
 											<tr>
 									      <td>id</td>
-									      <td>The id of the master recording you wanting to get details about. <strong>* Required</strong></td>
+									      <td>The id of the master recording you want to get details about. <strong>* Required</strong></td>
 									    </tr>
 											<tr>
 									      <td>translation_request_token</td>
@@ -326,16 +326,64 @@ array ('MasterRecording' =>
 									<h2>Update</h2>
 								</div>
 								<p>Update an existing master recording, and trigger the process of merging all clips associated with the translation request token ordered by Clip.order_by field.</p>
-
+								<table class="table table-hover table-condensed table-bordered table-stripped">
+									<caption>Parameters</caption>
+									<thead>
+									    <tr>
+									      <th>Name</th>
+									      <th>Description</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+									    <tr>
+									      <td>translation_request_token</td>
+									      <td>The token associated with the translation request.  It cannot be expired. <strong>* Required</strong></td>
+									    </tr>
+											<tr>
+									      <td>title</td>
+									      <td>The title for the final master recording. <strong>* Required</strong></td>
+									    </tr>
+											<tr>
+									      <td>language</td>
+									      <td>The language of the master recording. <strong>* Required</strong></td>
+									    </tr>
+											<tr>
+									      <td>final_filename</td>
+									      <td>The name of the final file. <strong>* Required</strong></td>
+									    </tr>
+									  </tbody>
+								</table>
 								<h3>Example Code</h3>
 								<div>
 <pre>
+// Trigger CakePHP's save() method
+if($this->MasterRecording->save($this->request->data['Translation'])) {
+	//The MasterRecording has saved correctly
+}else {
+	//There was a problem with the saving of the MasterRecording
+}
 </pre>
 								</div>
 								<h3>Walkthrough Code</h3>
 								<p>To update an existing master recording,  you will need to:</p>
 								<ol>
 									<li>Setup <a href="/docs/v1/cakephp_plugin/accessing_models" title="Documentation on How to Access the Plugin Models">access to the plugin model "MasterRecording"</a>.  In this case,  I am using the <code>$uses</code> attribute in the controller.</li>
+									<li>Call <a href="http://book.cakephp.org/2.0/en/models/saving-your-data.html#model-save-array-data-null-boolean-validate-true-array-fieldlist-array" target="_blank" title="CakePHP Documentation on Save Method">CakePHP's save method</a> on the model object, and pass the <code>$this->request->data</code> as its first parameter:
+										<div>
+											<pre>$this->MasterRecording->save($this->request->data['YOUR_CONTROLLERS_MAIN_MODEL']);</pre>
+										</div>
+										<em>Please change YOUR_CONTROLLERS_MAIN_MODEL to the main model for the current controller.</em><br><br>
+										Since the save method returns a boolean value,  it is best to wrap the save method in an <code>if...else</code> clause to verify the save was completed.  Here is an example of the <code>if...else</code> clause.
+										<div>
+<pre>
+if($this->MasterRecording->save($this->request->data['YOUR_CONTROLLERS_MAIN_MODEL'])) {
+	// The MasterRecording has saved correctly
+}else {
+	// There was a problem with the saving of the MasterRecording
+}
+</pre>
+										</div>
+									</li>
 								</ol>	
 							</section>
 						</div><!-- .span8 -->
