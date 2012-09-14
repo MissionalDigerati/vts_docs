@@ -34,7 +34,7 @@
     <div class="item">
 			<img src="/images/site/interface_slides/anyone_can_join.jpg" alt="Join the Crowd-Sourcing Community">
 			<div class="carousel-caption">
-         <h4>Developing a Crowd-Sourcing Community</h4>
+         <h4>Developing a Crowdsourcing Community</h4>
          <p>Provides people an easy way to join your community of translators.</p>
        </div>
 		</div>
