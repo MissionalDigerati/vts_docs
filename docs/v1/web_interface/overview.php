@@ -21,6 +21,7 @@
  * 
  */
 $crowdSourcingDefinition = "a process that involves outsourcing tasks to a distributed group of people. This process can occur both online and offline.<br><br><a href='http://en.wikipedia.org/wiki/Crowdsourcing' target='_blank'>- Wikipedia</a>";
+$YAMLDefinition = "a human friendly data serialization standard for all programming languages.<br><br><a href='http://www.yaml.org/' target='_blank'>- YAML.org</a>";
 ?>
 <!DOCTYPE html>
 <html>
@@ -162,7 +163,99 @@ public $default = array(
 								<div class="page-header">
 									<h2>Configuration</h2>
 								</div>
-								
+								<h3>Adding Your Videos</h3>
+								<p>All video settings are stored in <a href="" rel="popover" class="popover_link" data-content="<?php echo $YAMLDefinition; ?>" data-original-title="YAML">YAML</a>,  a simple to read markup language. The data structure of the YAML syntax is based on indentation.  More on this in a minute.  The files for setting up the videos are stored in <code>app/Locales/{language}/VIDEOS/videos.yml</code>.  Since the code that you downloaded has <strong>English (eng)</strong> as its default language,  you will find a sample in <code>app/Locales/eng/VIDEOS/videos.yml</code>.  If you open the file in your favorite text editor,  you will see the simplicity of YAML's syntax.</p>
+								<div>
+<pre>
+videos:
+  video_1:
+    title: '22 - The Compassionate Father'
+    settings_prefix: compass_father
+</pre>
+								</div>
+								<p>As I said earlier,  the syntax gains its data structure base on its indentation.  So in this file we have videos with only 1 element.  The first video is titled '22 - The Compassionate Father', and its setting prefix is 'compass_father'.  So to add a second file,  your code will look like this:</p>
+								<div>
+<pre>
+videos:
+  video_1:
+    title: '22 - The Compassionate Father'
+    settings_prefix: compass_father
+  video_2:
+    title: '23 - The Hidden Treasure'
+    settings_prefix: hidden_treasure
+</pre>
+								</div>
+								<p>You are not limited to the number of videos you can use in the site.  Just continue to add them in a similar way.</p>
+								<table class="table table-hover table-condensed table-bordered table-stripped">
+									<caption>Parameters for videos.yml</caption>
+									<thead>
+									    <tr>
+									      <th>Name</th>
+									      <th>Description</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+									    <tr>
+									      <td>title</td>
+									      <td>The title that will be displayed in a select box when adding a translation. <strong>* Required</strong></td>
+									    </tr>
+											<tr>
+									      <td>settings_prefix</td>
+									      <td>The prefix used for the file holding the specific settings for this video.  The settings file is stored in <code>app/Locales/{language}/VIDEOS/{settings_prefix}_settings.yml</code> <strong>* Required</strong></td>
+									    </tr>
+									  </tbody>
+								</table>
+								<h3>Adding Video Specific Settings</h3>
+								<p>After you change the settings in <code>app/Locales/eng/VIDEOS/videos.yml</code> to match your need,  you will need to create a file at <code>app/Locales/{language}/VIDEOS/{settings_prefix}_settings.yml</code>.  This is a settings file for the specific video.  If you open the file <code>app/Locales/eng/VIDEOS/compass_father_settings.yml</code>,  you can see how it is setup.</p>
+<div>
+<pre>
+clip_1:
+  vts_video_file: /files/master_files/example/the_compassionate_father_1.mp4
+  local_image_file: /img/clips/clip_1.jpg
+  text: 'One day, Jesus was teaching many tax collectors and sinners who were with him.'
+clip_2:
+  vts_video_file: /files/master_files/example/the_compassionate_father_2.mp4
+  local_image_file: /img/clips/clip_2.jpg
+  text: 'The religious leaders were grumbling because Jesus was treating these people as friends. So Jesus told this story.'
+clip_3:
+  vts_video_file: /files/master_files/example/the_compassionate_father_3.mp4
+  local_image_file: /img/clips/clip_3.jpg
+  text: '"There was a man who had two sons. The younger son told his father, "Father, I want my inheritance now!" So the father divided his property between the two sons.'
+...
+</pre>
+								</div>
+								<p>If you prepared your videos by following the instructions on the <a href="/preparing_your_video">Preparing Your Video</a> page,  you should have several clips that make up your entire video.  These clips are defined in this settings file,  along with their transcript,  their location of a local image,  and the location of the video file on the video translator service API server.  You will need to set up a settings file for each video using the correct file naming convention.</p>
+								<table class="table table-hover table-condensed table-bordered table-stripped">
+									<caption>Parameters for {settings_prefix}_settings.yml</caption>
+									<thead>
+									    <tr>
+									      <th>Name</th>
+									      <th>Description</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+									    <tr>
+									      <td>vts_video_file</td>
+									      <td>The location of the video file for this clip that will be merged with the audio.  This location is the path on the video translator service API server in the webroot folder. <strong>* Required</strong></td>
+									    </tr>
+											<tr>
+									      <td>local_image_file</td>
+									      <td>The location of an image file to display for this clip.  This location is the path in the webroot folder of web interface code.  <strong>* Required</strong></td>
+									    </tr>
+											<tr>
+									      <td>text</td>
+									      <td>The transcript for the single clip.  <strong>* Required</strong></td>
+									    </tr>
+									  </tbody>		
+								</table>
+								<h3>Internationalization</h3>
+								<p>CakePHP has built in Internationalization which makes it easy to offer your site in multiple languages.  You can learn more about CakePHP's Internationalization in the <a href="http://book.cakephp.org/2.0/en/core-libraries/internationalization-and-localization.html#internationalizing-your-application" target="_blank">CakePHP 2.0 Book</a>.  In order to translate the video settings,  you will need to:</p>
+								<ol>
+									<li>Create a folder in <code>app/Locales/</code> using the <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO 639-2</a> 3 letter language code.</li>
+									<li>In that folder,  create a folder titled <code>VIDEOS</code></li>
+									<li>Copy your files from <code>app/Locales/eng/VIDEOS/</code> to this folder.</li>
+									<li>Translate the new files into the new language.</li>
+								</ol>
 							</section>
 							<section id="licensing">
 								<div class="page-header">
